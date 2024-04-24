@@ -12,7 +12,7 @@ export default function Dashboard() {
       case 'houses':
         return <h1>Casas</h1>;
       case 'management':
-        return <h1>Gestão</h1>;
+        return <h1>Gestão.</h1>;
       default:
         return <h1>Home Page</h1>;
     }
