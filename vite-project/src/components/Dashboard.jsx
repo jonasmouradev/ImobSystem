@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HomePage from "./HomePage";
-import Contract from "./contract/Contract";
+import Contract from "./Contract";
 import Houses from "./Houses";
 import Management from "./Management";
 
@@ -23,9 +23,9 @@ export default function Dashboard() {
   };
 
   return (
-    <>
-      <div className="md:flex flex-row">
-        <div className="md:w-1/4 h-screen bg-gray-200 flex flex-col">
+    <div>
+      <div className="md:flex flex-row ">
+        <div className="md:w-1/4 h-screen bg-gray-200 flex flex-col items-stretch">
           <button
             className="sm:hidden md:flex flex-grow hover:bg-sky-700 items-center justify-center"
             onClick={() => setPage("home")}
@@ -53,6 +53,6 @@ export default function Dashboard() {
         </div>
         <div className="md:w-2/3 h-screen">{renderPage()}</div>
       </div>
-    </>
+    </div>
   );
 }
