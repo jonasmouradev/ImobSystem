@@ -1,4 +1,3 @@
-// 
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
@@ -34,7 +33,7 @@ const rows = [
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
-export default function ContractContent() {
+export default function DataTable() {
   return (
     <div style={{ height: 400, width: '80%' }}>
       <DataGrid

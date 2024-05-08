@@ -24,8 +24,8 @@ export default function Dashboard() {
 
   return (
     <div>
-      <div className="md:flex flex-row">
-        <div className="md:w-1/3 h-screen bg-gray-200 flex flex-col items-stretch">
+      <div className="md:flex flex-row ">
+        <div className="md:w-1/4 h-screen bg-gray-200 flex flex-col items-stretch">
           <button
             className="sm:hidden md:flex flex-grow hover:bg-sky-700 items-center justify-center"
             onClick={() => setPage("home")}
@@ -51,7 +51,7 @@ export default function Dashboard() {
             Gestão
           </button>
         </div>
-        <div className="md:w-2/3 h-screen bg-gray-100">{renderPage()}</div>
+        <div className="md:w-2/3 h-screen">{renderPage()}</div>
       </div>
     </div>
   );
