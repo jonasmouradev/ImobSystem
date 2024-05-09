@@ -4,7 +4,7 @@ import ContractNavBar from "./ContractNavBar.jsx";
 export default function Contract() {
   return (
     <>
-      <div className="md:flex flex-col h-screen justify-between items-center">
+      <div className="md:flex flex-col h-screen justify-around items-center mr-20 ">
         <ContractNavBar />
         <ContractContent />
       </div>
