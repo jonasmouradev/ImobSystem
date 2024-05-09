@@ -4,14 +4,26 @@ import { makeStyles } from "@mui/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "owner", headerName: "Owner", flex: 1 },
-  { field: "lastName", headerName: "Last name", flex: 1 },
+  {
+    field: "id", headerName: "ID", width: 70,
+    align: 'center',
+    headerAlign: 'center',
+  },
+  { field: "owner", headerName: "Owner", flex: 1, 
+  align:'center',
+  headerAlign:'center',
+   },
+  { field: "lastName", headerName: "Last name", flex: 1,
+  align:'center',
+  headerAlign:'center',
+   },
   {
     field: "age",
     headerName: "Age",
     type: "number",
     flex: 1,
+    align: 'center',
+    headerAlign: 'center',
   },
   {
     field: "owner",
@@ -28,8 +40,8 @@ const rows = [
   { id: 2, lastName: "Lannister", owner: "Cersei", age: 42 },
   { id: 3, lastName: "Lannister", owner: "Jaime", age: 45 },
   { id: 4, lastName: "Stark", owner: "Arya", age: 16 },
-  { id: 5, lastName: "Targaryen", owner: "Daenerys", age: null },
-  { id: 6, lastName: "Melisandre", owner: null, age: 150 },
+  { id: 5, lastName: "Targaryen", owner: "Daenerys", age: 42 },
+  { id: 6, lastName: "Melisandre", owner: null, age: 27 },
   { id: 7, lastName: "Clifford", owner: "Ferrara", age: 44 },
   { id: 8, lastName: "Frances", owner: "Rossini", age: 36 },
   { id: 9, lastName: "Roxie", owner: "Harvey", age: 65 },
@@ -60,7 +72,7 @@ export default function ContractContent() {
 
   return (
     <ThemeProvider theme={greyTheme}>
-      <div style={{ height: 700, width: "100%" }} className={classes.root}>
+      <div style={{ height: '90vh', width: "100%" }} className={classes.root}>
         <DataGrid
           rows={rows}
           columns={columns}

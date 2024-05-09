@@ -25,7 +25,7 @@ export default function Dashboard() {
   return (
       <>
       <div className="md:flex flex-row justify-between">
-        <div className="md:w-1/4 h-screen bg-gray-200 flex flex-col">
+        <div className="md:w-1/6 h-screen bg-gray-200 flex flex-col">
           <button
             className="sm:hidden md:flex flex-grow hover:bg-sky-700 items-center justify-center"
             onClick={() => setPage("home")}
