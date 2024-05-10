@@ -26,6 +26,7 @@ export default function Dashboard() {
       <>
       <div className="md:flex flex-row justify-between">
         <div className="md:w-1/6 h-screen bg-gray-200 flex flex-col">
+          <ul className="sideBar">
           <button
             className="sm:hidden md:flex flex-grow hover:bg-sky-700 items-center justify-center"
             onClick={() => setPage("home")}
@@ -50,6 +51,7 @@ export default function Dashboard() {
           >
             Gestão
           </button>
+          </ul>
         </div>
         <div className="md:w-5/6">{renderPage()}</div>
       </div>
