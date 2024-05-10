@@ -23,11 +23,11 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function CustomizedInputBase() {
+export default function ContractNavBar() {
   return (
     <Paper
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '100wh' }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '50vh', alignSelf: 'flex-center'}}
     >
       <IconButton sx={{ p: '10px' }} aria-label="menu">
         <MenuIcon />

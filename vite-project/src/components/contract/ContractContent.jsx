@@ -5,25 +5,33 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const columns = [
   {
-    field: "id", headerName: "ID", width: 70,
-    align: 'center',
-    headerAlign: 'center',
+    field: "id",
+    headerName: "ID",
+    width: 70,
+    align: "center",
+    headerAlign: "center",
   },
-  { field: "owner", headerName: "Owner", flex: 1, 
-  align:'center',
-  headerAlign:'center',
-   },
-  { field: "lastName", headerName: "Last name", flex: 1,
-  align:'center',
-  headerAlign:'center',
-   },
+  {
+    field: "owner",
+    headerName: "Owner",
+    flex: 1,
+    align: "center",
+    headerAlign: "center",
+  },
+  {
+    field: "lastName",
+    headerName: "Last name",
+    flex: 1,
+    align: "flex-start",
+    headerAlign: "flex-start",
+  },
   {
     field: "age",
     headerName: "Age",
     type: "number",
     flex: 1,
-    align: 'center',
-    headerAlign: 'center',
+    align: "flex-start",
+    headerAlign: "flex-start",
   },
   {
     field: "owner",
@@ -72,7 +80,15 @@ export default function ContractContent() {
 
   return (
     <ThemeProvider theme={greyTheme}>
-      <div style={{ height: '90vh', width: "100%" }} className={classes.root}>
+      <div
+        style={{
+          height: "70vh",
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+        className={classes.root}
+      >
         <DataGrid
           rows={rows}
           columns={columns}
