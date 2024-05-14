@@ -1,10 +1,10 @@
 import { useState } from "react";
 import HomePage from "./HomePage";
-import Contract from "./contract/Contract";
+import Contract from "./Contract";
 import Houses from "./Houses";
 import Management from "./Management";
 
-export default function Dashboard() {
+export default function SideBar() {
   const [page, setPage] = useState("home");
 
   const renderPage = () => {
@@ -23,10 +23,9 @@ export default function Dashboard() {
   };
 
   return (
-      <>
-      <div className="md:flex flex-row justify-between">
-        <div className="md:w-1/6 h-screen bg-gray-200 flex flex-col">
-          <ul className="sideBar">
+    <>
+      <div className="md:flex">
+        <div className="w-1/3 bg-gray-200 flex flex-col items-stretch">
           <button
             className="sm:hidden md:flex flex-grow hover:bg-sky-700 items-center justify-center"
             onClick={() => setPage("home")}
@@ -51,9 +50,8 @@ export default function Dashboard() {
           >
             Gestão
           </button>
-          </ul>
         </div>
-        <div className="md:w-5/6">{renderPage()}</div>
+        <div className="md:w-2/3 h-screen bg-gray-100">{renderPage()}</div>
       </div>
     </>
   );
