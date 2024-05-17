@@ -24,7 +24,7 @@ export default function Dashboard() {
 
   return (
       <>
-      <div className="md:flex flex-row justify-between">
+      {/* <div className="md:flex flex-row justify-between">
         <div className="md:w-1/6 h-screen bg-gray-200 flex flex-col">
           <ul className="sideBar">
           <button
@@ -55,6 +55,7 @@ export default function Dashboard() {
         </div>
         <div className="md:w-5/6">{renderPage()}</div>
       </div>
+    </>*/}
     </>
   );
 }
