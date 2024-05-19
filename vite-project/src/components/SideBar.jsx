@@ -30,7 +30,7 @@ export default function SideBar() {
             className="sm:hidden md:flex flex-grow hover:bg-sky-700 items-center justify-center"
             onClick={() => setPage("home")}
           >
-            Página Inicial
+            ImobSystem
           </button>
           <button
             className="sm:hidden md:flex flex-grow hover:bg-sky-700 items-center justify-center"
