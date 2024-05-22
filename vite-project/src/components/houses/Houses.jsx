@@ -1,4 +1,4 @@
-export default function TerminatedContracts() {
+export default function Houses() {
   return (
     <div>
       

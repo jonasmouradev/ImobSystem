@@ -2,7 +2,7 @@ import HomePage from "./HomePage";
 
 export default function Dashboard() {
   return (
-    <div className="h-screen bg-gray-200">
+    <div className="h-screen bg-white-200">
       <HomePage />
     </div>
   );

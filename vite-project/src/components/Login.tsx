@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
+import HomePage from "./homepage/HomePage";
 // import { useHistory } from "react-router-dom";
 
 // const route = {
@@ -19,6 +19,49 @@ export default function Login() {
 
   return (
     <div>
+      <div className="container">
+        {/* <!--login form--> */}
+        <div className="login-form">
+          <div className="tittle">login</div>
+          <form action="#">
+            <div className="input-box">
+              <i className="fa fa-envelope"></i>
+              <input type="text" placeholder="Enter your email " required />
+            </div>
+
+            <div className="input-box">
+              <i className="fa fa-lock"></i>
+              <input
+                type="password"
+                placeholder="Enter your password "
+                required
+              />
+            </div>
+            <div className="forgot">
+              {" "}
+              <a href="#">Esqueceu a senha?</a>
+            </div>
+            <div className="input-box">
+              <input type="submit" value="Entrar?" />
+            </div>
+            <div className="divider"> ou </div>
+            <div className="midias-sociais">
+              <i className="fa fa-facebook"></i>
+              <i className="fa fa-instagram"></i>
+              <i className="fa fa-github"></i>
+            </div>
+            <div className="sigup-text">
+              Não tenho uma conta? <a href="#">crie uma agora</a>
+            </div>
+          </form>
+        </div>
+        {/* <!--end login form-->
+     <!--login img--> */}
+        <div className="login-img">
+          <img src="hb23hl1q.png" width="100%" />
+        </div>
+        {/* <!--end login img--> */}
+      </div>
       <div className="bg-gray-300 h-screen flex justify-center items-center">
         <div className="sm:h-3/4 w-1/2 flex flex-col items-center justify-center gap-2 rounded-xl bg-white xl:w-1/3">
           <label className="input input-bordered flex items-center gap-2">
