@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Contract from "./contract/Contract";
-import Houses from "./Houses";
-import Management from "./Management";
+import Contract from "../contract/Contract";
+import Houses from "../houses/Houses";
+import Management from "../Management";
 
 export default function HomePage() {
   const [page, setPage] = useState("home");
@@ -28,7 +28,7 @@ export default function HomePage() {
           className="hover:bg-sky-700 p-2"
           onClick={() => setPage("home")}
         >
-          ImobSystem
+          Página Inicial
         </button>
         <button
           className="hover:bg-sky-700 p-2"

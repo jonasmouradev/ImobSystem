@@ -10,12 +10,12 @@
 /* .fodase {
   background-color: red;
 } */
-/* App.css */
+App.css 
 
 .body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+  background-color: #ffffff;
 }
 
 .page-container {
@@ -61,7 +61,7 @@
   align-items: center;
   gap: 5px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #0a3564;
   color: white;
   border: none;
   border-radius: 5px;
@@ -78,3 +78,4 @@
 .btn:hover {
   background-color: #0056b3;
 }
+
