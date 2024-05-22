@@ -1,13 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-// import { useHistory } from "react-router-dom";
-
-// const route = {
-//   path: "/homePage",
-//   element: <HomePage />,
-// };
 
 export default function Login() {
   // const history = useHistory();
