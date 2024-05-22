@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -19,49 +18,70 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <div className="container">
-        {/* <!--login form--> */}
-        <div className="login-form">
-          <div className="tittle">Login</div>
-          <form action="#">
-            <div className="input-box">
-              <img className="img-icon" src="/mensagem.png" alt="logo-Email" width="24px" height="24px"  />
-              <input type="text" placeholder="Email " required />
-            </div>
+    <div className="parent-container">
+      <div className="page-container">
+        <div className="container">
+          {/* <!--login form--> */}
+          <div className="login-form">
+            <div className="tittle">Login</div>
+            <form action="#">
+              <div className="input-box">
+                <img
+                  className="img-icon"
+                  src="/mensagem.png"
+                  alt="logo-Email"
+                  width="24px"
+                  height="24px"
+                />
+                <input type="text" placeholder="Email " required />
+              </div>
 
-         
-            <div className="input-box ">
-              <img className="img-icon" src="/trancar.png" alt="logo-senha" width="24px" height="24px" />
-              <input type="password" placeholder="Senha " required />
-            </div>
+              <div className="input-box ">
+                <img
+                  className="img-icon"
+                  src="/trancar.png"
+                  alt="logo-senha"
+                  width="24px"
+                  height="24px"
+                />
+                <input type="password" placeholder="Senha " required />
+              </div>
 
-            <div className="forgot">
-              {" "}
-              <a href="#">Esqueceu a senha?</a>
-            </div>
-            <div className="input-box">
-              <input type="submit" value="Entrar?" />
-            </div>
-            {/* <div className="divider"> ou </div>
+              <div className="forgot">
+                {" "}
+                <a href="#">Esqueceu a senha?</a>
+              </div>
+              <div className="input-box">
+                <input
+                  type="submit"
+                  value="Entrar"
+                  onClick={handleLogin}
+                ></input>
+              </div>
+              {/* <div className="divider"> ou </div>
             <div className="midias-sociais">
               <i className="fa fa-facebook"></i>
               <i className="fa fa-instagram"></i>
               <i className="fa fa-github"></i>
             </div> */}
-            {/* <div className="sigup-text">
+              {/* <div className="sigup-text">
               Não tenho uma conta? <a href="#">crie uma agora</a>
             </div> */}
-          </form>
-        </div>
-        {/* <!--end login form-->
+            </form>
+          </div>
+          {/* <!--end login form-->
      <!--login img--> */}
-        <div className="login-img">
-        <img className="img-logo" src="/ImobSystem.png" alt="logo" width="100%"/>
+          <div className="login-img">
+            <img
+              className="img-logo"
+              src="/ImobSystem.png"
+              alt="logo"
+              width="100%"
+            />
+          </div>
+          {/* <!--end login img--> */}
         </div>
-        {/* <!--end login img--> */}
-      </div>
-      {/* <div className="bg-gray-300 h-screen flex justify-center items-center">
+        {/* <div className="bg-gray-300 h-screen flex justify-center items-center">
         <div className="sm:h-3/4 w-1/2 flex flex-col items-center justify-center gap-2 rounded-xl bg-white xl:w-1/3">
           <label className="input input-bordered flex items-center gap-2">
             <svg
@@ -106,6 +126,7 @@ export default function Login() {
           </button>
         </div>
       </div> */}
+      </div>
     </div>
   );
 }
