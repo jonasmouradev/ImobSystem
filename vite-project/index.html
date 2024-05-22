@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Brimston.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImobSystem</title>
+    <link
+      id="tailwind-theme"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-white dark:bg-gray-800 text-black dark:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Adicionando classe 'dark' ao body se o tema for dark
+      const theme = document.documentElement.getAttribute("data-theme");
+      if (theme === "dark") {
+        document.body.classList.add("dark");
+      }
+    </script>
+  </body>
+</html>

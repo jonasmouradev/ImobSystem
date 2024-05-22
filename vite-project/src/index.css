@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
+*{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+    .content-auto {
+      content-visibility: auto;
+    }
+  }
+
+/* .fodase {
+  background-color: red;
+} */
+App.css 
+
+.body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  background-color: #030391;
+  padding: 23.5px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 20px;
+  background-color: #0a3564;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
