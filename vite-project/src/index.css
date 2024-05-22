@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; 
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,14 +14,11 @@
     }
   }
 
-/* .fodase {
-  background-color: red;
-} */
-/* App.css */
+
+
 
 .body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background-color: #f0f2f5;
 }
 
@@ -77,4 +81,130 @@
 
 .btn:hover {
   background-color: #0056b3;
+}
+
+
+
+
+:root{
+    --default-color:#7B8EF4;
+}
+::selection{
+    background-color: var(--default-color);
+    color: rgb(255, 255, 255);
+}
+body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--default-color);
+    padding: 40px;
+}
+.container{
+    max-width: 850px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:40px 30px;
+}
+.container .login-form .title{
+    position: relative;
+    font-size: 24px;
+    font-weight:500 ;
+    color: #333;
+}
+.container .login-form .title::before{
+     content: '';
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     height: 3px;
+     width: 25px;
+     background-color: var(--default-color);
+}
+.container .login-form .input-box{
+    color: #030391;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+.container .login-form .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px 10px; 
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+.container .login-form .input-box input:focus,
+.container .login-form .input-box input:valid{
+    border-color: var(--default-color);
+}
+.container .login-form .input-box input[type="submit"]{
+    background-color: var(--default-color);
+    border: 0;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container .login-form .input-box i{
+    position: absolute;
+    color: var(--default-color);
+    font-size: 17px;
+} 
+.container .login-form .forgot a{
+    color: var(--default-color);
+    text-decoration: none;
+}
+.container .login-form .divider{
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+}
+.container .login-form .midias-sociais{
+    text-align: center;
+}
+.container .login-form .midias-sociais i{
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.container .login-form .midias-sociais i:hover{
+    color: var(--default-color);
+}
+.container .login-form .sigup-text a{
+    color: var(--default-color);
+    text-decoration: none;
+}
+/* essa parte muda td! */
+.container .login-img{ 
+    width: 50%;
+    
+}
+
+.img-logo {
+  border-radius: 10px;
+}
+/* essa parte tira a imagem se precisar */
+@media (max-width:800px){
+    .login-img{
+        display: none;
+    }
+}
+
+.img-icon {
+  
+  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(100%) contrast(100%);
+
+  
 }
