@@ -1,11 +1,11 @@
 import ContractContent from "./ContractContent";
-import ContractNavBar from "./ContractNavBar.jsx";
+import ContractHeader from "./ContractHeader.jsx";
 
 export default function Contract() {
   return (
     <>
-      <div className="md:flex flex-col h-screen justify-evenly items-center pt-0 ">
-        <ContractNavBar />
+      <div className="overflow-x-auto flex flex-grow flex-col max-h-vh">
+        <ContractHeader />
         <ContractContent />
       </div>
     </>

@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "code": "15632",
+      "name": "Air Jordan 1 Low",
+      "description": "Tenis do Jordan",
+      "category": "Tênis",
+      "brand": "Nike",
+      "collab": "Jordan"
+    },
+    {
+      "id": 2,
+      "code": "15632",
+      "name": "Air Jordan 1 Low",
+      "description": "Tenis do Jordan",
+      "category": "Tênis",
+      "brand": "Nike",
+      "collab": "NOCTA"
+    },
+    {
+      "id": 3,
+      "code": "15432",
+      "name": "Air Force Low",
+      "description": "Tenis da moda tiktok",
+      "category": "Tênis",
+      "brand": "Nike",
+      "collab": ""
+    },
+    {
+      "id": 4,
+      "code": "15433",
+      "name": "Air Force Low",
+      "description": "Tenis da moda tiktok",
+      "category": "Tênis",
+      "brand": "Nike",
+      "collab": ""
+    },
+    {
+      "id": 5,
+      "code": "10987",
+      "name": "Vans Old Skool",
+      "description": "Tenis brabo da vans",
+      "category": "Tênis",
+      "brand": "Vans",
+      "collab": ""
+    },
+    {
+      "id": 6,
+      "code": "18876",
+      "name": "Off-White x Air Jordan 4 Sail Feminino",
+      "description": "Tenis de rico",
+      "category": "Tênis",
+      "brand": "Jordan",
+      "collab": "Off-White"
+    },
+    {
+      "id": 7,
+      "code": "65423",
+      "name": "Yeezy Slide",
+      "description": "Chinelo Pica",
+      "category": "Tênis",
+      "brand": "Adidas",
+      "collab": "Yeezy"
+    },
+    {
+      "id": 8,
+      "code": "73552",
+      "name": "Yeezy Boost 350",
+      "description": "Pisar fofo",
+      "category": "Tênis",
+      "brand": "Yeezy",
+      "collab": ""
+    },
+    {
+      "id": 9,
+      "code": "87654",
+      "name": "Puma Suede",
+      "description": "Tenis do Jordan",
+      "category": "Tênis",
+      "brand": "Puma",
+      "collab": ""
+    },
+    {
+      "id": 10,
+      "code": "87654",
+      "name": "Nike SB",
+      "description": "Tenis brabo",
+      "category": "Tênis",
+      "brand": "Nike",
+      "collab": ""
+    }
+  ]
+}

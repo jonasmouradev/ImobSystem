@@ -14,7 +14,7 @@ export default function HomePage() {
       case "home":
         return (
           <div className="pl-5 pt-5">
-            <button className="btn" onClick={handleLogout}>
+            <button className="btn btn-primary" onClick={handleLogout}>
               Logout
             </button>
           </div>
