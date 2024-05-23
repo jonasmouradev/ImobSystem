@@ -1,9 +1,11 @@
 import { api } from '../../services/api';
 import { AgreementType, UpdateAgreementType } from './types';
 
+const prefix = '/agreement';
+
 // Create Agreement
 export function createAgreement(params: AgreementType) {
-  return api.post('/agreement/create', params).then((response) => {
+  return api.post(`${prefix}/create`, params).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Create Agreement');
     }
@@ -13,7 +15,7 @@ export function createAgreement(params: AgreementType) {
 // Check Agreement Info
 export function checkAgreementInfo(id): Promise<AgreementType> {
   return api
-    .get<AgreementType>(`/agreement/checkInfo/${id}`)
+    .get<AgreementType>(`${prefix}/checkInfo/${id}`)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('Failed to Check Agreement Info');
@@ -28,7 +30,7 @@ export function updateAgreement(
   params: UpdateAgreementType,
 ): Promise<AgreementType> {
   return api
-    .update<AgreementType>(`/agreement/update/${id}`, params)
+    .update<AgreementType>(`${prefix}/update/${id}`, params)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('Failed to Update Agreement');
@@ -39,7 +41,7 @@ export function updateAgreement(
 
 // Delete Agreement
 export function deleteAgreement(id) {
-  return api.update(`/agreement/delete/${id}`).then((response) => {
+  return api.update(`${prefix}/delete/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete Agreement');
     }
@@ -49,7 +51,7 @@ export function deleteAgreement(id) {
 
 // Get Active Agreement List
 export function getActiveAgreementList(id) {
-  return api.get(`/checkActiveAgreements/${id}`).then((response) => {
+  return api.get(`${prefix}/checkActiveAgreements/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete Agreement');
     }
@@ -59,7 +61,7 @@ export function getActiveAgreementList(id) {
 
 // Get Inactive Agreement List
 export function getInactiveAgreementList(id) {
-  return api.get(`/checkInactiveAgreements/${id}`).then((response) => {
+  return api.get(`${prefix}/checkInactiveAgreements/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete Agreement');
     }

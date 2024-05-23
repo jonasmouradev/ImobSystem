@@ -1,9 +1,11 @@
 import { api } from '../../services/api';
 import { TenantType, UpdateTenantType } from './types';
 
+const prefix = '/tenant';
+
 // Create Tenant
 export function createTenant(params: TenantType) {
-  return api.post('/tenant/create', params).then((response) => {
+  return api.post(`${prefix}/create`, params).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Create Tenant');
     }
@@ -12,7 +14,7 @@ export function createTenant(params: TenantType) {
 }
 // Check Tenant Info
 export function checkTenantInfo(id): Promise<TenantType> {
-  return api.get<TenantType>(`/tenant/checkInfo/${id}`).then((response) => {
+  return api.get<TenantType>(`${prefix}/checkInfo/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Check Tenant Info');
     }
@@ -26,7 +28,7 @@ export function updateTenant(
   params: UpdateTenantType,
 ): Promise<TenantType> {
   return api
-    .update<TenantType>(`/tenant/update/${id}`, params)
+    .update<TenantType>(`${prefix}/update/${id}`, params)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('Failed to Update Tenant');
@@ -37,7 +39,7 @@ export function updateTenant(
 
 // Delete Tenant
 export function deleteTenant(id) {
-  return api.update(`/tenant/delete/${id}`).then((response) => {
+  return api.update(`${prefix}/delete/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete Tenant');
     }
@@ -47,7 +49,7 @@ export function deleteTenant(id) {
 
 // Get Tenant List
 export function getTenantList(id) {
-  return api.get(`checkTenants/user/${id}/`).then((response) => {
+  return api.get(`${prefix}/checkTenants/${id}/`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete House');
     }

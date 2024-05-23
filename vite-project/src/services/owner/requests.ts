@@ -1,9 +1,11 @@
 import { api } from '../../services/api';
 import { OwnerType, UpdateOwnerType } from './types';
 
+const prefix = '/owner';
+
 // Create House
 export function createHouse(params: OwnerType) {
-  return api.post('/owner/create', params).then((response) => {
+  return api.post(`${prefix}/create`, params).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Create House');
     }
@@ -12,7 +14,7 @@ export function createHouse(params: OwnerType) {
 }
 // Check House Info
 export function checkHouseInfo(id): Promise<OwnerType> {
-  return api.get<OwnerType>(`/owner/checkInfo/${id}`).then((response) => {
+  return api.get<OwnerType>(`${prefix}/checkInfo/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Check House Info');
     }
@@ -23,7 +25,7 @@ export function checkHouseInfo(id): Promise<OwnerType> {
 // Update House
 export function updateHouse(id, params: UpdateOwnerType): Promise<OwnerType> {
   return api
-    .update<OwnerType>(`/owner/update/${id}`, params)
+    .update<OwnerType>(`${prefix}/update/${id}`, params)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('Failed to Update House');
@@ -34,7 +36,7 @@ export function updateHouse(id, params: UpdateOwnerType): Promise<OwnerType> {
 
 // Delete House
 export function deleteHouse(id) {
-  return api.update(`/owner/delete/${id}`).then((response) => {
+  return api.update(`${prefix}/delete/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete House');
     }
@@ -44,7 +46,7 @@ export function deleteHouse(id) {
 
 // Get Owner List
 export function getOwnerList(id) {
-  return api.get(`/checkOwners/user/${id}`).then((response) => {
+  return api.get(`${prefix}/checkOwners/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete Owner');
     }
