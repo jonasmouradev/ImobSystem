@@ -26,8 +26,10 @@ export default function FormNewContract() {
               <input type="checkbox" defaultChecked className="checkbox" />
             </label>
           </label>
-          <input type="radio" name="radio-1" className="radio" checked />
-          <input type="radio" name="radio-1" className="radio" />
+          <div className="p-2">
+            <input type="radio" name="radio-1" className="radio" checked />
+            <input type="radio" name="radio-1" className="radio" />
+          </div>
           <div className="label">
             <span className="label-text">What is your name?</span>
           </div>
