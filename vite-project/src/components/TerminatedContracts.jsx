@@ -2,8 +2,8 @@ export default function TerminatedContracts() {
   return (
     <>
       <h1>Contratos Encerrados</h1>
-      <div className="parent-container">
-        <table className="table table-xs">
+      <div className="sm:flex justify-center">
+        <table className="table table-xs custom-table">
           <thead>
             <tr>
               <th></th>
