@@ -8,7 +8,7 @@ import FormNewContract from "./components/FormNewContract";
 
 function App() {
   return (
-    <div className="theme-aqua">
+    <div className="light">
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
