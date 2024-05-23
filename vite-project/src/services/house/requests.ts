@@ -41,3 +41,13 @@ export function deleteHouse(id) {
     return response.data;
   });
 }
+
+// Get House List
+export function getHousetList(id) {
+  return api.get(`/house/checkHouses/${id}`).then((response) => {
+    if (response.status !== 200) {
+      throw new Error('Failed to Delete House');
+    }
+    return response.data;
+  });
+}

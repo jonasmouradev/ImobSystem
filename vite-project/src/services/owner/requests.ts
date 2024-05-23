@@ -41,3 +41,13 @@ export function deleteHouse(id) {
     return response.data;
   });
 }
+
+// Get Owner List
+export function getOwnerList(id) {
+  return api.get(`/checkOwners/user/${id}`).then((response) => {
+    if (response.status !== 200) {
+      throw new Error('Failed to Delete Owner');
+    }
+    return response.data;
+  });
+}

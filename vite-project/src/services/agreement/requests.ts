@@ -1,4 +1,5 @@
 import { api } from '../../services/api';
+import { AgreementType, UpdateAgreementType } from './types';
 
 // Create Agreement
 export function createAgreement(params: AgreementType) {
@@ -39,6 +40,26 @@ export function updateAgreement(
 // Delete Agreement
 export function deleteAgreement(id) {
   return api.update(`/agreement/delete/${id}`).then((response) => {
+    if (response.status !== 200) {
+      throw new Error('Failed to Delete Agreement');
+    }
+    return response.data;
+  });
+}
+
+// Get Active Agreement List
+export function getActiveAgreementList(id) {
+  return api.get(`/checkActiveAgreements/${id}`).then((response) => {
+    if (response.status !== 200) {
+      throw new Error('Failed to Delete Agreement');
+    }
+    return response.data;
+  });
+}
+
+// Get Inactive Agreement List
+export function getInactiveAgreementList(id) {
+  return api.get(`/checkInactiveAgreements/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete Agreement');
     }

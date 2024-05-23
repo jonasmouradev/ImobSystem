@@ -44,3 +44,13 @@ export function deleteTenant(id) {
     return response.data;
   });
 }
+
+// Get Tenant List
+export function getTenantList(id) {
+  return api.get(`checkTenants/user/${id}/`).then((response) => {
+    if (response.status !== 200) {
+      throw new Error('Failed to Delete House');
+    }
+    return response.data;
+  });
+}
