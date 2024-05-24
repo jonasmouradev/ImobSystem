@@ -5,7 +5,7 @@ export default function Dashboard() {
     <div className="h-screen bg-gray-200">
       <HomePage />
     </div>
-  );
+  ); a
 }
 
 
