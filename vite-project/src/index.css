@@ -196,4 +196,13 @@
 .img-icon {
   filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(200deg)
     brightness(100%) contrast(100%);
+    
+}
+
+.custom-background {
+  background-color: #a2bef5; 
+}
+
+.custom-rectangle {
+  background-color: #ffffff00; 
 }
