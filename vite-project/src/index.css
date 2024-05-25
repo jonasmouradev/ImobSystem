@@ -207,3 +207,31 @@
 .custom-rectangle {
   background-color: #ffffff00; 
 }
+
+.image-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('./Imagens/Principal.png');
+  background-size: cover; 
+  background-position: center; 
+}
+
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  display: flex;
+  margin: 10px;
+  background-color: rgba(116, 116, 116, 0); 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.content-overlay > div:not(:first-child) {
+  margin: 20px; 
+ 
+}
+
