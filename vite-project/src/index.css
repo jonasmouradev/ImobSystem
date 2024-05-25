@@ -145,7 +145,7 @@
 .container .login-form .input-box input[type="submit"] {
   background-color: var(--default-color);
   border: 0;
-  color: #ffffff;
+  color: #1a1579;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -200,7 +200,8 @@
 }
 
 .custom-background {
-  background-color: #a2bef5; 
+  background-color: #7b8ef4;
+  
 }
 
 .custom-rectangle {
