@@ -5,7 +5,7 @@ export default function FormNewContract() {
         <form method="dialog">
           <h1>Cadastrar Novo Contrato</h1>
           <button className="btn btn-sm btn-circle btn-ghost">✕</button>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control flex flex-row gap-10">
             <div>
               <div className="label">
                 <span className="label-text">What is your name?</span>
