@@ -44,12 +44,12 @@ export default function HomePage() {
         <div className="h-3/5 w-4/5 flex flex-row items-center justify-evenly custom-rectangle">
           <div className="content-overlay">
             {/* Criar Novo Contrato */}
-            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg shadow-lg">
+            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg">
               <button
                 onClick={() =>
                   document.getElementById("my_modal_3").showModal()
                 }
-                className="w-full h-full flex flex-col items-center justify-center"
+                className="flex flex-col items-center justify-center"
               >
                 <svg
                   xmlns="http:www.w3.org/2000/svg"
@@ -76,10 +76,10 @@ export default function HomePage() {
               </button>
             </div>
             {/* Abrir Contratos */}
-            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg shadow-lg">
+            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg">
               <button
                 onClick={() => navigate("/ActiveContracts")}
-                className="w-full h-full flex flex-col items-center justify-center"
+                className="flex flex-col items-center justify-center"
               >
                 <svg
                   xmlns="http:www.w3.org/2000/svg"
@@ -99,10 +99,10 @@ export default function HomePage() {
               </button>
             </div>
             {/* Contratos finalizados */}
-            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg shadow-lg">
+            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg">
               <button
                 onClick={() => navigate("/terminated")}
-                className="w-full h-full flex flex-col items-center justify-center"
+                className="flex flex-col items-center justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -122,10 +122,10 @@ export default function HomePage() {
               </button>
             </div>
             {/* Notificações */}
-            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg shadow-lg">
+            <div className="box w-48 h-48 flex items-center justify-center border rounded-lg">
               <button
                 onClick={() => navigate("/notifications")}
-                className="w-full h-full flex flex-col items-center justify-center"
+                className="flex flex-col items-center justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

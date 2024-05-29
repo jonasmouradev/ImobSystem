@@ -230,4 +230,10 @@
 
 .content-overlay > div {
   margin: 20px;
+  box-shadow: 0 6px 6px 0 #0057b377;
+}
+
+.content-overlay > div:hover {
+  transform: scale(1.1);
+  transition: transform 0.15s ease-in-out;
 }

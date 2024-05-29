@@ -8,7 +8,7 @@ export default function FormNewContract() {
           <label className="form-control flex flex-row gap-10">
             <div>
               <div className="label">
-                <span className="label-text">What is your name?</span>
+                <span className="label-text">Dono da residência</span>
               </div>
               <input
                 type="text"
@@ -16,7 +16,7 @@ export default function FormNewContract() {
                 className="input input-bordered w-full max-w-xs"
               />
               <div className="label">
-                <span className="label-text">What is your name?</span>
+                <span className="label-text">Inquilino</span>
               </div>
               <input
                 type="text"
@@ -24,7 +24,7 @@ export default function FormNewContract() {
                 className="input input-bordered w-full max-w-xs"
               />
               <div className="label">
-                <span className="label-text">What is your name?</span>
+                <span className="label-text">Descrição</span>
               </div>
               <input
                 type="text"
