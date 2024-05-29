@@ -1,7 +1,7 @@
 export default function FormNewContract() {
   return (
     <div className="flex h-full w-full justify-center items-center">
-      <div className="h-2/3 w-1/2 p-10 bg-white rounded-xl flex justify-center">
+      <div className="h-2/3 w-1/3 p-10 bg-white rounded-xl flex justify-center">
         <form method="dialog">
           <h1>Cadastrar Novo Contrato</h1>
           <button className="btn btn-sm btn-circle btn-ghost">✕</button>
@@ -26,10 +26,10 @@ export default function FormNewContract() {
               <div className="label">
                 <span className="label-text">Descrição</span>
               </div>
-              <input
-                type="text"
-                placeholder="Sobrenome"
-                className="input input-bordered w-full max-w-xs"
+              <textarea
+                placeholder="Descrição"
+                className="textarea textarea-bordered w-full max-w-xs"
+                rows={4}
               />
             </div>
             <div>
