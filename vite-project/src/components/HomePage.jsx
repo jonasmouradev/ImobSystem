@@ -4,6 +4,7 @@ import TerminatedContracts from "./TerminatedContracts";
 import FormNewContract from "./FormNewContract";
 import { useNavigate } from "react-router-dom";
 
+
 export default function HomePage() {
   const [page, setPage] = useState("home");
   const navigate = useNavigate();
@@ -38,9 +39,10 @@ export default function HomePage() {
   return (
     <div className="h-screen flex items-center justify-center custom-background">
       <div className="image-background">
-        {/* <div className="absolute top-10 text-2xl font-bold">
-         Página Inicial ImobSystem
-       </div> */}
+      <div className="Titulo">
+          ImobSystem<br />
+          Gestão de Contratos
+        </div>
         <div className="h-3/5 w-4/5 flex flex-row items-center justify-evenly custom-rectangle">
           <div className="content-overlay">
             {/* Criar Novo Contrato */}

@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Krona+One&family=Montserrat:wght@400;600&family=Nova+Square&family=Poppins:wght@200;400;500;600&family=Work+Sans&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.Titulo {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem; /* Ajuste o tamanho conforme necessário */
+  text-align:left;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,51 +44,6 @@
   margin: 0;
   background-color: #f0f2f5;
 }
-
-/* .header {
-  width: 100%;
-  background-color: #030391;
-  padding: 23.5px 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2em;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  padding: 20px;
-}
-
-.btn {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  margin: 10px 0;
-} */
 
 .icon {
   width: 24px;
@@ -178,7 +147,6 @@
   color: var(--default-color);
   text-decoration: none;
 }
-/* essa parte muda td! */
 .container .login-img {
   width: 50%;
 }
@@ -186,7 +154,7 @@
 .img-logo {
   border-radius: 10px;
 }
-/* essa parte tira a imagem se precisar */
+
 @media (max-width: 800px) {
   .login-img {
     display: none;
