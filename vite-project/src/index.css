@@ -277,3 +277,35 @@
 .toggle-primary {
   background-color: #3490dc;
 }
+
+
+/* CSS para a caixa de notificação */
+.notification-box {
+  position: absolute;
+  top: 10px; /* ajuste conforme necessário */
+  right: 10px; /* ajuste conforme necessário */
+  z-index: 1000; /* garantir que esteja acima de outros elementos */
+}
+
+/* CSS adicional para ajustar a aparência */
+.indicator {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  background-color: #d51c1c; /* exemplo de cor */
+  color: white;
+  padding: 5px 9px;
+  border-radius: 12px;
+  margin-right: 5px;
+}
+
+.btn {
+  background-color: #6ea1d767;
+  color: rgb(29, 2, 2);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
