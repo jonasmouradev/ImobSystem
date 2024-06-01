@@ -38,10 +38,10 @@ export default function HomePage() {
   return (
     <div className="h-screen flex items-center justify-center custom-background">
       <div className="image-background">
-          <div className="Titulo">
-          ImobSystem<br />
+        <div className="Titulo m-10">
+          ImobSystem
+          <br />
 
-  
           Gestão de Contratos
         </div>
         <div className="h-3/5 w-4/5 flex flex-row items-center justify-evenly custom-rectangle">
