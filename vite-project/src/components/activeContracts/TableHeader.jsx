@@ -1,10 +1,12 @@
-import ImobSystemIcon from "../../../public/ImobSLogo.png";
+// import ImobSystemIcon from "../../../public/ImobSLogo.png";
+import { useNavigate } from "react-router-dom";
 
 export default function ContractHeader() {
+  const navigate = useNavigate();
   return (
     <div className="md:flex flex-row items-center p-1 2xl:p-10">
       {/* <div className="bg-blue-500 w-16 h-16 flex items-center justify-center rounded-lg"> */}
-      <button className="btn">
+      <button className="btn" onClick={() => navigate("/home")}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -20,6 +22,7 @@ export default function ContractHeader() {
           />
         </svg>
       </button>
+      <div className="Titulo m-10">Contratos</div>
       {/* </div> */}
       <div className="pl-5 font-sans text-white text-xl">
         <h1>Produtos</h1>

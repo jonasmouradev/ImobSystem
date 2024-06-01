@@ -1,9 +1,12 @@
+import TableHeader from "./activeContracts/TableHeader";
+
 export default function TerminatedContracts() {
   return (
-    <>
+    <div className="w-full h-screen p-10">
       <h1>Contratos Encerrados</h1>
+      <TableHeader />
       <div className="sm:flex justify-center">
-        <table className="table table-xs custom-table">
+        <table className="table table-xs custom-table border Titulo">
           <thead>
             <tr>
               <th></th>
@@ -210,6 +213,6 @@ export default function TerminatedContracts() {
           </tfoot>
         </table>
       </div>
-    </>
+    </div>
   );
 }
