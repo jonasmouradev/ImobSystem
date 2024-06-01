@@ -1,8 +1,8 @@
 export default function FormNewContract() {
   return (
-    <div className="flex h-screen w-full justify-center items-center bg-gray-100">
-      <div className="h-auto w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
-        <div className="h-96 overflow-y-auto p-4"> {/* Ajuste aqui */}
+    <div className="flex h-screen w-full justify-center items-center">
+      <div className="h-2/3 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
+        <div className="h-full overflow-y-auto p-4"> {/* Ajuste aqui */}
           <form>
             <div className="flex justify-between items-center mb-6">
               <h1 className="text-2xl font-bold">Cadastrar Novo Contrato</h1>

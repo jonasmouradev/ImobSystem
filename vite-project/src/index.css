@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Krona+One&family=Montserrat:wght@400;600&family=Nova+Square&family=Poppins:wght@200;400;500;600&family=Work+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Krona+One&family=Montserrat:wght@400;600&family=Nova+Square&family=Poppins:wght@200;400;500;600&family=Work+Sans&display=swap");
 
 * {
   margin: 0;
@@ -9,14 +9,13 @@
 }
 
 .Titulo {
-  font-family: "DM Serif Display", serif;
+  font-family: poppins;
   font-weight: 400;
   font-style: normal;
   font-size: 3rem; /* Ajuste o tamanho conforme necessário */
-  text-align:left;
+  text-align: left;
   margin-left: 25px;
   margin-bottom: 20px;
-  
 }
 
 @tailwind base;
@@ -196,12 +195,12 @@
   align-items: center;
 }
 
-.content-overlay > div {
+.content-overlay > button {
   margin: 20px;
   box-shadow: 0 6px 6px 0 #0057b377;
 }
 
-.content-overlay > div:hover {
+.content-overlay > button:hover {
   transform: scale(1.1);
   transition: transform 0.15s ease-in-out;
 }
@@ -212,7 +211,8 @@
   padding: 1rem;
 }
 
-.input, .textarea {
+.input,
+.textarea {
   width: 100%;
 }
 
@@ -224,7 +224,7 @@
   margin-top: 1rem;
 }
 
-.flex {
+/* .flex {
   display: flex;
 }
 
@@ -272,7 +272,7 @@
   background: none;
   border: none;
   box-shadow: none;
-}
+} */
 
 .toggle-primary {
   background-color: #3490dc;
