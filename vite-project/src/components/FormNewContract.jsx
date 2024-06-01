@@ -157,10 +157,10 @@ export default function FormNewContract() {
                 className="input input-bordered w-full"
               />
               <label className="label">
-                <span className="label-text">Idade</span>
+                <span className="label-text">Data de nascimento</span>
               </label>
               <input
-                type="number"
+                type="date"
                 placeholder="Idade"
                 className="input input-bordered w-full"
               />
