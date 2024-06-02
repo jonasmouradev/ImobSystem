@@ -25,7 +25,7 @@ export function checkHouseInfo(id): Promise<HouseType> {
 // Update House
 export function updateHouse(id, params: UpdateHouseType): Promise<HouseType> {
   return api
-    .update<HouseType>(`${prefix}/update/${id}`, params)
+    .put<HouseType>(`${prefix}/update/${id}`, params)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('Failed to Update House');
@@ -36,7 +36,7 @@ export function updateHouse(id, params: UpdateHouseType): Promise<HouseType> {
 
 // Delete House
 export function deleteHouse(id) {
-  return api.update(`${prefix}/delete/${id}`).then((response) => {
+  return api.delete(`${prefix}/delete/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete House');
     }
