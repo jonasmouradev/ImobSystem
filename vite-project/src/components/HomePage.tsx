@@ -3,7 +3,9 @@ import Contract from "./activeContracts/ContractTable";
 import TerminatedContracts from "./TerminatedContracts";
 import FormNewContract from "./FormNewContract";
 import { useNavigate } from "react-router-dom";
-
+import React from "react";
+import Notification from "./Notification";
+import Login from "./Login";
 
 export default function HomePage() {
   const [page, setPage] = useState("home");
@@ -18,7 +20,6 @@ export default function HomePage() {
               Logout
             </button>
           </div>
-          
         );
       case "contract":
         return <Contract />;
@@ -46,16 +47,38 @@ export default function HomePage() {
           Gestão de Contratos
         </div>
 
-        <div className="indicator notification-box">
-       <span className="indicator-item badge badge-secondary">99+</span> 
-       <button className="btn">Notificação</button>
+        <div className="indicator notification-box p-20">
+          {/* <span className="indicator-item badge badge-secondary">99+</span> */}
+          <button className="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+              />
+            </svg>
+          </button>
         </div>
 
         <div className="h-3/5 w-4/5 flex flex-row items-center justify-evenly custom-rectangle">
           <div className="content-overlay">
             {/* Criar Novo Contrato */}
             <button
-              onClick={() => document.getElementById("my_modal_3").showModal()}
+              onClick={() => {
+                const modal = document.getElementById(
+                  "my_modal_3"
+                ) as HTMLDialogElement;
+                if (modal) {
+                  modal.showModal();
+                }
+              }}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">
@@ -109,7 +132,6 @@ export default function HomePage() {
             {/* Contratos finalizados */}
             <button
               onClick={() => navigate("/terminated")}
-              c
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">
