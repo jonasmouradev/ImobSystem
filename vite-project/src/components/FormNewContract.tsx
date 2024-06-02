@@ -2,6 +2,7 @@ import { createAgreement } from '../services/agreement/requests';
 import React, { useState } from 'react';
 import { addToast } from '../components/Toast/toast';
 import { HouseType } from '../services/house/types';
+import { createHouse } from '../services/house/requests';
 
 export default function FormNewContract() {
   const [house, setHouse] = useState<HouseType>();
@@ -18,6 +19,37 @@ export default function FormNewContract() {
     const roomsNumber = data.get('RoomsNumber') as unknown as number;
     const type = data.get('Type') as string;
     const CEP = data.get('CEP') as string;
+    if (address !== '' && roomsNumber !== 0 && type !== '' && CEP !== '') {
+      handleHouseRegister(address, roomsNumber, type, CEP);
+    } else {
+      addToast('Preencha todos os campos', { appearance: 'error' });
+    }
+  };
+
+  const handleHouseRegister = async (
+    address: string,
+    rooms: number,
+    type: string,
+    zipCode: string,
+  ) => {
+    try {
+      const data = await createHouse({
+        address,
+        rooms,
+        type,
+        zipCode,
+      });
+
+      if (data.success) {
+        addToast('Cadastro realizado com sucesso', { appearance: 'success' });
+        setHouse({ address, rooms, type, zipCode });
+      } else {
+        addToast('Email ou senha incorretos', { appearance: 'error' });
+      }
+    } catch (error) {
+      console.error('Register failed:', error);
+      addToast('O cadastro falhou', { appearance: 'error' });
+    }
   };
 
   const handleAgreementSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -40,7 +72,7 @@ export default function FormNewContract() {
       initDate !== null &&
       finalDate !== null
     ) {
-      handleRegister(
+      handleAgreementRegister(
         ownerName,
         tenatName,
         description,
@@ -56,7 +88,7 @@ export default function FormNewContract() {
     }
   };
 
-  const handleRegister = async (
+  const handleAgreementRegister = async (
     owner: string,
     tenant: string,
     description: string,
