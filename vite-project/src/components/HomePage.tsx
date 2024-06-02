@@ -1,19 +1,19 @@
-import { useState } from "react";
-import Contract from "./activeContracts/ContractTable";
-import TerminatedContracts from "./TerminatedContracts";
-import FormNewContract from "./FormNewContract";
-import { useNavigate } from "react-router-dom";
-import React from "react";
-import Notification from "./Notification";
-import Login from "./Login";
+import { useState } from 'react';
+import Contract from './activeContracts/ContractTable';
+import TerminatedContracts from './TerminatedContracts';
+import FormNewContract from './FormNewContract';
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import Notification from './Notification';
+import Login from './Login';
 
 export default function HomePage() {
-  const [page, setPage] = useState("home");
+  const [page, setPage] = useState('home');
   const navigate = useNavigate();
 
   const renderPage = () => {
     switch (page) {
-      case "home":
+      case 'home':
         return (
           <div className="pl-5 pt-5">
             <button className="btn btn-primary" onClick={handleLogout}>
@@ -21,13 +21,13 @@ export default function HomePage() {
             </button>
           </div>
         );
-      case "contract":
+      case 'contract':
         return <Contract />;
-      case "terminated":
+      case 'terminated':
         return <TerminatedContracts />;
-      case "newContract":
+      case 'newContract':
         return <FormNewContract />;
-      case "notifications":
+      case 'notifications':
         return <Notification />;
       default:
         return <Login />;
@@ -35,7 +35,7 @@ export default function HomePage() {
   };
 
   const handleLogout = () => {
-    navigate("/login");
+    navigate('/login');
   };
 
   return (
@@ -49,7 +49,7 @@ export default function HomePage() {
 
         <div className="indicator notification-box p-20">
           {/* <span className="indicator-item badge badge-secondary">99+</span> */}
-          <button className="btn">
+          <button title="name" className="btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -73,7 +73,7 @@ export default function HomePage() {
             <button
               onClick={() => {
                 const modal = document.getElementById(
-                  "my_modal_3"
+                  'my_modal_3',
                 ) as HTMLDialogElement;
                 if (modal) {
                   modal.showModal();
@@ -108,7 +108,7 @@ export default function HomePage() {
             </button>
             {/* Abrir Contratos */}
             <button
-              onClick={() => navigate("/ActiveContracts")}
+              onClick={() => navigate('/ActiveContracts')}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">
@@ -131,7 +131,7 @@ export default function HomePage() {
             </button>
             {/* Contratos finalizados */}
             <button
-              onClick={() => navigate("/terminated")}
+              onClick={() => navigate('/terminated')}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">
@@ -154,7 +154,7 @@ export default function HomePage() {
             </button>
             {/* Notificações */}
             <button
-              onClick={() => navigate("/notifications")}
+              onClick={() => navigate('/notifications')}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">

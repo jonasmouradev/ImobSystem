@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import FormNewUser from './FormNewUser';
 
 export default function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleLogin = (event) => {
     event.preventDefault();
 
-    if (email.trim() === "" || password.trim() === "") {
-      setErrorMessage("Por favor, preencha todos os campos.");
+    if (email.trim() === '' || password.trim() === '') {
+      setErrorMessage('Por favor, preencha todos os campos.');
       return;
     }
 
-    navigate("/home");
+    navigate('/home');
   };
 
   return (
@@ -65,11 +66,32 @@ export default function Login() {
               )}
 
               <div className="forgot">
-                {" "}
                 <a href="#">Esqueceu a senha?</a>
               </div>
+              <div className="register">
+                <button
+                  title="Cadastrar"
+                  onClick={() => {
+                    const modal = document.getElementById(
+                      'my_modal_3',
+                    ) as HTMLDialogElement;
+                    if (modal) {
+                      modal.showModal();
+                    }
+                  }}
+                >
+                  Cadastrar
+                </button>
+                <dialog id="my_modal_3" className="modal">
+                  <div className="w-full">
+                    <p className="py-4">
+                      <FormNewUser />
+                    </p>
+                  </div>
+                </dialog>
+              </div>
               <div className="input-box">
-                <input type="submit" value="Entrar"></input>
+                <input type="submit" value="Entrar" />
               </div>
             </form>
           </div>
