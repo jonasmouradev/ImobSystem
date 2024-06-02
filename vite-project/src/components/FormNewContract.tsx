@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import { createAgreement } from '../services/agreement/requests';
 import React from 'react';
-import { AgreementType } from '../services/agreement';
 import { addToast } from '../components/Toast/toast';
 
 export default function FormNewContract() {
@@ -83,8 +81,6 @@ export default function FormNewContract() {
     <div className="flex h-screen w-full justify-center items-center">
       <div className="h-2/3 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
         <div className="h-full overflow-y-auto p-4">
-          {' '}
-          {/* Ajuste aqui */}
           <form onSubmit={handleSubmit}>
             <div className="flex justify-between items-center mb-6">
               <h1 className="text-2xl font-bold">Cadastrar Novo Contrato</h1>
