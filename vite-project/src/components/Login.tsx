@@ -35,7 +35,8 @@ export default function Login() {
                   height="24px"
                 />
                 <input
-                  type="text"
+                  name="email"
+                  type="email"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -52,6 +53,7 @@ export default function Login() {
                   height="24px"
                 />
                 <input
+                  name="password"
                   type="password"
                   placeholder="Senha"
                   value={password}
@@ -68,32 +70,32 @@ export default function Login() {
               <div className="forgot">
                 <a href="#">Esqueceu a senha?</a>
               </div>
-              <div className="register">
-                <button
-                  title="Cadastrar"
-                  onClick={() => {
-                    const modal = document.getElementById(
-                      'my_modal_3',
-                    ) as HTMLDialogElement;
-                    if (modal) {
-                      modal.showModal();
-                    }
-                  }}
-                >
-                  Cadastrar
-                </button>
-                <dialog id="my_modal_3" className="modal">
-                  <div className="w-full">
-                    <p className="py-4">
-                      <FormNewUser />
-                    </p>
-                  </div>
-                </dialog>
-              </div>
               <div className="input-box">
                 <input type="submit" value="Entrar" />
               </div>
             </form>
+            <div className="register">
+              <button
+                title="Cadastrar"
+                onClick={() => {
+                  const modal = document.getElementById(
+                    'my_modal_3',
+                  ) as HTMLDialogElement;
+                  if (modal) {
+                    modal.showModal();
+                  }
+                }}
+              >
+                Cadastrar
+              </button>
+              <dialog id="my_modal_3" className="modal">
+                <div className="w-full">
+                  <div className="py-4">
+                    <FormNewUser />
+                  </div>
+                </div>
+              </dialog>
+            </div>
           </div>
 
           <div className="login-img">
