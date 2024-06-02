@@ -11,10 +11,10 @@
     "json": "json-server --watch dadosJson/db.json --port 3001"
   },
   "dependencies": {
-    
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "axios": "^1.7.2",
+    "@fortawesome/fontawesome-free": "^6.5.2",
     "json-server": "^1.0.0-beta.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

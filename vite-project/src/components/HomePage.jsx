@@ -4,6 +4,7 @@ import TerminatedContracts from "./TerminatedContracts";
 import FormNewContract from "./FormNewContract";
 import { useNavigate } from "react-router-dom";
 
+
 export default function HomePage() {
   const [page, setPage] = useState("home");
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ export default function HomePage() {
               Logout
             </button>
           </div>
+          
         );
       case "contract":
         return <Contract />;
@@ -41,9 +43,14 @@ export default function HomePage() {
         <div className="Titulo m-10">
           ImobSystem
           <br />
-
           Gestão de Contratos
         </div>
+
+        <div className="indicator notification-box">
+       <span className="indicator-item badge badge-secondary">99+</span> 
+       <button className="btn">Notificação</button>
+        </div>
+
         <div className="h-3/5 w-4/5 flex flex-row items-center justify-evenly custom-rectangle">
           <div className="content-overlay">
             {/* Criar Novo Contrato */}
