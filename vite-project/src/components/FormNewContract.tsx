@@ -1,20 +1,35 @@
 import { createAgreement } from '../services/agreement/requests';
-import React from 'react';
+import React, { useState } from 'react';
 import { addToast } from '../components/Toast/toast';
+import { HouseType } from '../services/house/types';
 
 export default function FormNewContract() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [house, setHouse] = useState<HouseType>();
+  const [status, setStatus] = useState(false);
+
+  const handleStatus = () => {
+    status === true ? setStatus(false) : setStatus(true);
+  };
+
+  const handleHouseSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const address = data.get('Address') as string;
+    const roomsNumber = data.get('RoomsNumber') as unknown as number;
+    const type = data.get('Type') as string;
+    const CEP = data.get('CEP') as string;
+  };
+
+  const handleAgreementSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const ownerName = data.get('OwnerName') as string;
     const tenatName = data.get('TenatName') as string;
     const description = data.get('Description') as string;
-    const status = data.get('Status') as unknown as boolean;
     const agreementValue = data.get('AgreementValue') as string;
     const installment = data.get('Installment') as unknown as number;
     const initDate = data.get('InitDate') as unknown as Date;
     const finalDate = data.get('FinalDate') as unknown as Date;
-    const House = data.get('House') as string;
 
     if (
       ownerName !== '' &&
@@ -23,8 +38,7 @@ export default function FormNewContract() {
       agreementValue !== '' &&
       installment !== null &&
       initDate !== null &&
-      finalDate !== null &&
-      House !== ''
+      finalDate !== null
     ) {
       handleRegister(
         ownerName,
@@ -35,7 +49,7 @@ export default function FormNewContract() {
         status,
         initDate,
         finalDate,
-        House,
+        house,
       );
     } else {
       addToast('Preencha todos os campos', { appearance: 'error' });
@@ -51,7 +65,7 @@ export default function FormNewContract() {
     status: boolean,
     initDateAgreement: Date,
     finalDateAgreement: Date,
-    house: string,
+    house: HouseType | undefined,
   ) => {
     try {
       const data = await createAgreement({
@@ -81,7 +95,7 @@ export default function FormNewContract() {
     <div className="flex h-screen w-full justify-center items-center">
       <div className="h-2/3 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
         <div className="h-full overflow-y-auto p-4">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleAgreementSubmit}>
             <div className="flex justify-between items-center mb-6">
               <h1 className="text-2xl font-bold">Cadastrar Novo Contrato</h1>
               <button className="btn btn-sm btn-circle btn-ghost">✕</button>
@@ -137,6 +151,7 @@ export default function FormNewContract() {
                 <input
                   placeholder="status"
                   type="checkbox"
+                  onClick={handleStatus}
                   className="toggle toggle-primary"
                 />
                 <label className="label">
@@ -171,6 +186,8 @@ export default function FormNewContract() {
                 /> */}
               </div>
             </div>
+          </form>
+          <form onSubmit={handleHouseSubmit}>
             <div className="flex flex-col gap-4 mt-6">
               <h2 className="text-xl font-semibold">Casa</h2>
               <label className="label">

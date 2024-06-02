@@ -1,3 +1,5 @@
+import { HouseType } from '../house/types';
+
 export type AgreementType = {
   owner: string;
   tenant: string;
@@ -7,7 +9,7 @@ export type AgreementType = {
   status: boolean;
   initDateAgreement: Date;
   finalDateAgreement: Date;
-  house: string;
+  house: HouseType | undefined;
 };
 
 export type UpdateAgreementType = {
