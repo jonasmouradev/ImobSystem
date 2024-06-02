@@ -5,11 +5,9 @@ export type AgreementType = {
   valueAgreement: string;
   numInstallments: number;
   status: boolean;
-  createdAt: Date;
-  updateAt: Date;
   initDateAgreement: Date;
-  periodAgreement: Date;
   finalDateAgreement: Date;
+  house: string;
 };
 
 export type UpdateAgreementType = {

@@ -1,4 +1,4 @@
-import { api } from '../../services/api';
+import { api } from '../api';
 import { AgreementType, UpdateAgreementType } from './types';
 
 const prefix = '/agreement';
@@ -30,7 +30,7 @@ export function updateAgreement(
   params: UpdateAgreementType,
 ): Promise<AgreementType> {
   return api
-    .update<AgreementType>(`${prefix}/update/${id}`, params)
+    .put<AgreementType>(`${prefix}/update/${id}`, params)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('Failed to Update Agreement');
@@ -41,7 +41,7 @@ export function updateAgreement(
 
 // Delete Agreement
 export function deleteAgreement(id) {
-  return api.update(`${prefix}/delete/${id}`).then((response) => {
+  return api.delete(`${prefix}/delete/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete Agreement');
     }

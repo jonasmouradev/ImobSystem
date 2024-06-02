@@ -1,9 +1,91 @@
+import { useState } from 'react';
+import { createAgreement } from '../services/agreement/requests';
+import React from 'react';
+import { AgreementType } from '../services/agreement';
+import { addToast } from '../components/Toast/toast';
+
 export default function FormNewContract() {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const ownerName = data.get('OwnerName') as string;
+    const tenatName = data.get('TenatName') as string;
+    const description = data.get('Description') as string;
+    const status = data.get('Status') as unknown as boolean;
+    const agreementValue = data.get('AgreementValue') as string;
+    const installment = data.get('Installment') as unknown as number;
+    const initDate = data.get('InitDate') as unknown as Date;
+    const finalDate = data.get('FinalDate') as unknown as Date;
+    const House = data.get('House') as string;
+
+    if (
+      ownerName !== '' &&
+      tenatName !== '' &&
+      description !== '' &&
+      agreementValue !== '' &&
+      installment !== null &&
+      initDate !== null &&
+      finalDate !== null &&
+      House !== ''
+    ) {
+      handleRegister(
+        ownerName,
+        tenatName,
+        description,
+        agreementValue,
+        installment,
+        status,
+        initDate,
+        finalDate,
+        House,
+      );
+    } else {
+      addToast('Preencha todos os campos', { appearance: 'error' });
+    }
+  };
+
+  const handleRegister = async (
+    owner: string,
+    tenant: string,
+    description: string,
+    valueAgreement: string,
+    numInstallments: number,
+    status: boolean,
+    initDateAgreement: Date,
+    finalDateAgreement: Date,
+    house: string,
+  ) => {
+    try {
+      const data = await createAgreement({
+        owner,
+        tenant,
+        description,
+        valueAgreement,
+        numInstallments,
+        status,
+        initDateAgreement,
+        finalDateAgreement,
+        house,
+      });
+
+      if (data.success) {
+        addToast('Cadastro realizado com sucesso', { appearance: 'success' });
+      } else {
+        addToast('Email ou senha incorretos', { appearance: 'error' });
+      }
+    } catch (error) {
+      console.error('Register failed:', error);
+      addToast('O cadastro falhou', { appearance: 'error' });
+    }
+  };
+
   return (
     <div className="flex h-screen w-full justify-center items-center">
       <div className="h-2/3 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
-        <div className="h-full overflow-y-auto p-4"> {/* Ajuste aqui */}
-          <form>
+        <div className="h-full overflow-y-auto p-4">
+          {' '}
+          {/* Ajuste aqui */}
+          <form onSubmit={handleSubmit}>
             <div className="flex justify-between items-center mb-6">
               <h1 className="text-2xl font-bold">Cadastrar Novo Contrato</h1>
               <button className="btn btn-sm btn-circle btn-ghost">✕</button>
@@ -16,6 +98,7 @@ export default function FormNewContract() {
                 <input
                   type="text"
                   placeholder="Nome"
+                  name="OwnerName"
                   className="input input-bordered w-full"
                 />
                 <label className="label">
@@ -56,6 +139,7 @@ export default function FormNewContract() {
                   <span className="label-text">Estado</span>
                 </label>
                 <input
+                  placeholder="status"
                   type="checkbox"
                   className="toggle toggle-primary"
                 />
@@ -63,6 +147,7 @@ export default function FormNewContract() {
                   <span className="label-text">Início do Contrato</span>
                 </label>
                 <input
+                  placeholder="initDate"
                   type="date"
                   className="input input-bordered w-full"
                 />
@@ -70,6 +155,7 @@ export default function FormNewContract() {
                   <span className="label-text">Término do Contrato</span>
                 </label>
                 <input
+                  placeholder="endDate"
                   type="date"
                   className="input input-bordered w-full"
                 />
@@ -165,7 +251,9 @@ export default function FormNewContract() {
                 className="input input-bordered w-full"
               />
             </div>
-            <button type="submit" className="btn btn-primary mt-6">Salvar</button>
+            <button type="submit" className="btn btn-primary mt-6">
+              Salvar
+            </button>
           </form>
         </div>
       </div>
