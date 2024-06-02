@@ -1,5 +1,6 @@
 // import ImobSystemIcon from "../../../public/ImobSLogo.png";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 export default function ContractHeader() {
   const navigate = useNavigate();

@@ -1,13 +1,13 @@
 import HomePage from "./HomePage";
+import React from "react";
 
 export default function Dashboard() {
   return (
     <div className="h-screen bg-gray-200">
       <HomePage />
     </div>
-  ); 
+  );
 }
-
 
 // import { useState } from "react";
 // import HomePage from "./HomePage";
@@ -67,6 +67,6 @@ export default function Dashboard() {
 //         <div className="md:w-5/6">{renderPage()}</div>
 //       </div>
 //     </>
-    
+
 //   );
 // }

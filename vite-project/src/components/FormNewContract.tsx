@@ -1,8 +1,12 @@
+import React from "react";
+
 export default function FormNewContract() {
   return (
     <div className="flex h-screen w-full justify-center items-center">
       <div className="h-2/3 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
-        <div className="h-full overflow-y-auto p-4"> {/* Ajuste aqui */}
+        <div className="h-full overflow-y-auto p-4">
+          {" "}
+          {/* Ajuste aqui */}
           <form>
             <div className="flex justify-between items-center mb-6">
               <h1 className="text-2xl font-bold">Cadastrar Novo Contrato</h1>
@@ -55,24 +59,15 @@ export default function FormNewContract() {
                 <label className="label">
                   <span className="label-text">Estado</span>
                 </label>
-                <input
-                  type="checkbox"
-                  className="toggle toggle-primary"
-                />
+                <input type="checkbox" className="toggle toggle-primary" />
                 <label className="label">
                   <span className="label-text">Início do Contrato</span>
                 </label>
-                <input
-                  type="date"
-                  className="input input-bordered w-full"
-                />
+                <input type="date" className="input input-bordered w-full" />
                 <label className="label">
                   <span className="label-text">Término do Contrato</span>
                 </label>
-                <input
-                  type="date"
-                  className="input input-bordered w-full"
-                />
+                <input type="date" className="input input-bordered w-full" />
                 {/* <label className="label">
                   <span className="label-text">Período do Acordo</span>
                 </label>
@@ -165,7 +160,9 @@ export default function FormNewContract() {
                 className="input input-bordered w-full"
               />
             </div>
-            <button type="submit" className="btn btn-primary mt-6">Salvar</button>
+            <button type="submit" className="btn btn-primary mt-6">
+              Salvar
+            </button>
           </form>
         </div>
       </div>

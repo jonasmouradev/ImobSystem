@@ -1,5 +1,6 @@
 import TableContent from "./TableContent.tsx";
 import TableHeader from "./TableHeader.jsx";
+import React from "react";
 
 export default function Contract() {
   return (

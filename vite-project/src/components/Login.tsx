@@ -15,7 +15,6 @@ export default function Login() {
       return;
     }
 
-  
     navigate("/home");
   };
 
@@ -23,7 +22,6 @@ export default function Login() {
     <div className="parent-container">
       <div className="page-container">
         <div className="container">
-      
           <div className="login-form">
             <div className="title">Login</div>
             <form onSubmit={handleLogin}>
@@ -62,7 +60,9 @@ export default function Login() {
               </div>
 
               {/* Exibir mensagem de erro, se houver */}
-              {errorMessage && <div className="error-message">{errorMessage}</div>}
+              {errorMessage && (
+                <div className="error-message">{errorMessage}</div>
+              )}
 
               <div className="forgot">
                 {" "}
@@ -73,7 +73,7 @@ export default function Login() {
               </div>
             </form>
           </div>
-     
+
           <div className="login-img">
             <img
               className="img-logo"
@@ -82,7 +82,6 @@ export default function Login() {
               width="100%"
             />
           </div>
-        
         </div>
       </div>
     </div>

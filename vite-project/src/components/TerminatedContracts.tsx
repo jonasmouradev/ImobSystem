@@ -1,4 +1,5 @@
 import TableHeader from "./activeContracts/TableHeader";
+import React from "react";
 
 export default function TerminatedContracts() {
   return (

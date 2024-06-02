@@ -6,6 +6,7 @@ import { createRoutes, routesResolver } from "./router/router";
 // import HomePage from "./components/HomePage";
 // import TerminatedContracts from "./components/TerminatedContracts";
 // import FormNewContract from "./components/FormNewContract";
+import React from "react";
 
 function App() {
   const accountPermissions = ["COMPANY"]; // replace with actual permissions
