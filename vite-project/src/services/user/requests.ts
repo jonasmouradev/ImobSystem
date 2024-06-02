@@ -22,7 +22,7 @@ export function checkUserInfo(id): Promise<UserType> {
 
 // Update User
 export function updateUser(id, params: UpdateUserType): Promise<UserType> {
-  return api.update<UserType>(`/user/update/${id}`, params).then((response) => {
+  return api.put<UserType>(`/user/update/${id}`, params).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Update User');
     }
@@ -32,7 +32,7 @@ export function updateUser(id, params: UpdateUserType): Promise<UserType> {
 
 // Delete User
 export function deleteUser(id) {
-  return api.update(`/user/delete/${id}`).then((response) => {
+  return api.delete(`/user/delete/${id}`).then((response) => {
     if (response.status !== 200) {
       throw new Error('Failed to Delete User');
     }
