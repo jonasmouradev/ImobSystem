@@ -6,7 +6,7 @@ export default function Contract() {
   return (
     <>
       <div className="overflow-x-auto flex flex-grow flex-col max-h-vh">
-        <TableHeader />
+        <TableHeader title="Contratos Ativos" />
         <TableContent />
       </div>
     </>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FormNewUser from './FormNewUser';
+// import FormNewUser from './FormNewUser';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -91,7 +91,7 @@ export default function Login() {
               <dialog id="my_modal_3" className="modal">
                 <div className="w-full">
                   <div className="py-4">
-                    <FormNewUser />
+                    {/* <FormNewUser /> */}
                   </div>
                 </div>
               </dialog>

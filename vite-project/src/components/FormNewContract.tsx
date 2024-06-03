@@ -1,8 +1,8 @@
-import { createAgreement } from '../services/agreement/requests';
-import React, { useState } from 'react';
-import { addToast } from '../components/Toast/toast';
-import { HouseType } from '../services/house/types';
-import { createHouse } from '../services/house/requests';
+import { createAgreement } from "../services/agreement/requests";
+import React, { useState } from "react";
+import { addToast } from "../components/Toast/toast";
+import { HouseType } from "../services/house/types";
+import { createHouse } from "../services/house/requests";
 
 export default function FormNewContract() {
   const [house, setHouse] = useState<HouseType>();
@@ -15,14 +15,14 @@ export default function FormNewContract() {
   const handleHouseSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const address = data.get('Address') as string;
-    const roomsNumber = data.get('RoomsNumber') as unknown as number;
-    const type = data.get('Type') as string;
-    const CEP = data.get('CEP') as string;
-    if (address !== '' && roomsNumber !== 0 && type !== '' && CEP !== '') {
+    const address = data.get("Address") as string;
+    const roomsNumber = data.get("RoomsNumber") as unknown as number;
+    const type = data.get("Type") as string;
+    const CEP = data.get("CEP") as string;
+    if (address !== "" && roomsNumber !== 0 && type !== "" && CEP !== "") {
       handleHouseRegister(address, roomsNumber, type, CEP);
     } else {
-      addToast('Preencha todos os campos', { appearance: 'error' });
+      addToast("Preencha todos os campos", { appearance: "error" });
     }
   };
 
@@ -30,7 +30,7 @@ export default function FormNewContract() {
     address: string,
     rooms: number,
     type: string,
-    zipCode: string,
+    zipCode: string
   ) => {
     try {
       const data = await createHouse({
@@ -41,33 +41,33 @@ export default function FormNewContract() {
       });
 
       if (data.success) {
-        addToast('Cadastro realizado com sucesso', { appearance: 'success' });
+        addToast("Cadastro realizado com sucesso", { appearance: "success" });
         setHouse({ address, rooms, type, zipCode });
       } else {
-        addToast('Email ou senha incorretos', { appearance: 'error' });
+        addToast("Email ou senha incorretos", { appearance: "error" });
       }
     } catch (error) {
-      console.error('Register failed:', error);
-      addToast('O cadastro falhou', { appearance: 'error' });
+      console.error("Register failed:", error);
+      addToast("O cadastro falhou", { appearance: "error" });
     }
   };
 
   const handleAgreementSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const ownerName = data.get('OwnerName') as string;
-    const tenatName = data.get('TenatName') as string;
-    const description = data.get('Description') as string;
-    const agreementValue = data.get('AgreementValue') as string;
-    const installment = data.get('Installment') as unknown as number;
-    const initDate = data.get('InitDate') as unknown as Date;
-    const finalDate = data.get('FinalDate') as unknown as Date;
+    const ownerName = data.get("OwnerName") as string;
+    const tenatName = data.get("TenatName") as string;
+    const description = data.get("Description") as string;
+    const agreementValue = data.get("AgreementValue") as string;
+    const installment = data.get("Installment") as unknown as number;
+    const initDate = data.get("InitDate") as unknown as Date;
+    const finalDate = data.get("FinalDate") as unknown as Date;
 
     if (
-      ownerName !== '' &&
-      tenatName !== '' &&
-      description !== '' &&
-      agreementValue !== '' &&
+      ownerName !== "" &&
+      tenatName !== "" &&
+      description !== "" &&
+      agreementValue !== "" &&
       installment !== null &&
       initDate !== null &&
       finalDate !== null
@@ -81,10 +81,10 @@ export default function FormNewContract() {
         status,
         initDate,
         finalDate,
-        house,
+        house
       );
     } else {
-      addToast('Preencha todos os campos', { appearance: 'error' });
+      addToast("Preencha todos os campos", { appearance: "error" });
     }
   };
 
@@ -97,7 +97,7 @@ export default function FormNewContract() {
     status: boolean,
     initDateAgreement: Date,
     finalDateAgreement: Date,
-    house: HouseType | undefined,
+    house: HouseType | undefined
   ) => {
     try {
       const data = await createAgreement({
@@ -113,13 +113,13 @@ export default function FormNewContract() {
       });
 
       if (data.success) {
-        addToast('Cadastro realizado com sucesso', { appearance: 'success' });
+        addToast("Cadastro realizado com sucesso", { appearance: "success" });
       } else {
-        addToast('Email ou senha incorretos', { appearance: 'error' });
+        addToast("Email ou senha incorretos", { appearance: "error" });
       }
     } catch (error) {
-      console.error('Register failed:', error);
-      addToast('O cadastro falhou', { appearance: 'error' });
+      console.error("Register failed:", error);
+      addToast("O cadastro falhou", { appearance: "error" });
     }
   };
 
@@ -262,7 +262,7 @@ export default function FormNewContract() {
                 placeholder="User ID"
                 className="input input-bordered w-full"
               />
-              <h2 className="text-xl font-semibold">Utilizador</h2>
+              {/* <h2 className="text-xl font-semibold">Utilizador</h2>
               <label className="label">
                 <span className="label-text">Nome</span>
               </label>
@@ -294,7 +294,7 @@ export default function FormNewContract() {
                 type="date"
                 placeholder="Idade"
                 className="input input-bordered w-full"
-              />
+              /> */}
             </div>
             <button type="submit" className="btn btn-primary mt-6">
               Salvar

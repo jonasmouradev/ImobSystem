@@ -1,8 +1,13 @@
 // import ImobSystemIcon from "../../../public/ImobSLogo.png";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function ContractHeader() {
+TableHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+export default function TableHeader(props) {
   const navigate = useNavigate();
   return (
     <div className="md:flex flex-row items-center p-1 2xl:p-10">
@@ -23,7 +28,7 @@ export default function ContractHeader() {
           />
         </svg>
       </button>
-      <div className="Titulo m-10">Contratos</div>
+      <div className="Titulo m-10">{props.title}</div>
       {/* </div> */}
       <div className="pl-5 font-sans text-white text-xl">
         <h1>Produtos</h1>
