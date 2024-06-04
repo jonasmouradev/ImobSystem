@@ -4,7 +4,9 @@ import TerminatedContracts from "./TerminatedContracts";
 import FormNewContract from "./FormNewContract";
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import Notification from "./Notification";
+import FormNewHouse from "./FormNewHouse";
+import FormNewOwner from "./FormNewOwner";
+import FormNewTenant from "./FormNewTenant";
 import Login from "./Login";
 import Dropdown from "./Dropdown";
 
@@ -28,8 +30,12 @@ export default function HomePage() {
         return <TerminatedContracts />;
       case "newContract":
         return <FormNewContract />;
-      case "notifications":
-        return <Notification />;
+      case "newHouse":
+        return <FormNewHouse />;
+      case "newHouse":
+        return <FormNewOwner />;
+      case "newHouse":
+        return <FormNewTenant />;
       default:
         return <Login />;
     }
@@ -91,6 +97,75 @@ export default function HomePage() {
                 </dialog>
               </div>
             </button>
+                        {/* Nova Casa */}
+                        <button
+              onClick={() => navigate("/newHouse")}
+              className="box w-48 h-48 flex items-center justify-center border rounded-lg"
+            >
+              <div className="flex flex-col items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-12 h-12"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
+                  />
+                </svg>
+                <h1 className="mt-2 text-center">Cadastrar Nova Casa</h1>
+              </div>
+            </button>
+                        {/* Novo Proprietário */}
+            <button
+              onClick={() => navigate("/newOwner")}
+              className="box w-48 h-48 flex items-center justify-center border rounded-lg"
+            >
+              <div className="flex flex-col items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-12 h-12"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
+                  />
+                </svg>
+                <h1 className="mt-2 text-center">Cadastrar Novo Propietário</h1>
+              </div>
+            </button>
+                        {/* Novo Inquilino */}
+            <button
+              onClick={() => navigate("/newTenant")}
+              className="box w-48 h-48 flex items-center justify-center border rounded-lg"
+            >
+              <div className="flex flex-col items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-12 h-12"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
+                  />
+                </svg>
+                <h1 className="mt-2 text-center">Cadastrar Novo Inquilino</h1>
+              </div>
+            </button>
             {/* Abrir Contratos */}
             <button
               onClick={() => navigate("/ActiveContracts")}
@@ -137,29 +212,7 @@ export default function HomePage() {
                 <h1 className="mt-2 text-center">Contratos finalizados</h1>
               </div>
             </button>
-            {/* Notificações */}
-            <button
-              onClick={() => navigate("/notifications")}
-              className="box w-48 h-48 flex items-center justify-center border rounded-lg"
-            >
-              <div className="flex flex-col items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-12 h-12"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
-                  />
-                </svg>
-                <h1 className="mt-2 text-center">Notificações</h1>
-              </div>
-            </button>
+
           </div>
         </div>
       </div>

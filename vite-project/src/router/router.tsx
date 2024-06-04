@@ -4,7 +4,9 @@ import Login from "../components/Login";
 import TerminatedContracts from "../components/TerminatedContracts";
 import FormNewContract from "../components/FormNewContract";
 import ContractTable from "../components/activeContracts/ContractTable";
-import Notification from "../components/Notification";
+import FormNewHouse from "../components/FormNewHouse";
+import FormNewOwner from "../components/FormNewOwner";
+import FormNewInquilino from "../components/FormNewTenant";
 import React from "react";
 
 export type RouteType = {
@@ -82,8 +84,12 @@ export function createRoutes() {
       element: <TerminatedContracts />,
     },
     {
-      path: "/notifications",
-      element: <Notification />,
+      path: "/newHouse",
+      element: <FormNewHouse />,
+    },
+    {
+      path: "/newOwner",
+      element: <FormNewOwner />,
     },
   ];
 
