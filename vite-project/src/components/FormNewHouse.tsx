@@ -127,9 +127,14 @@ export default function FormNewHouse() {
     <div className="flex h-screen w-full justify-center items-center">
       <div className="h-2/3 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
         <div className="h-full overflow-y-auto p-4">
-          
-          <form onSubmit={handleAgreementSubmit}>
+          <form method="dialog" className="modal-backdrop">
             <div className="flex justify-between items-center mb-6">
+              <span className="label-text text-2xl font-bold">
+                Cadastrar Nova Casa
+              </span>
+              <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+            </div>
+            {/* <div className="flex justify-between items-center mb-6"> */}
             <div className="flex flex-col gap-4 mt-6">
               <h2 className="text-xl font-semibold">Casa</h2>
               <label className="label">
@@ -206,12 +211,11 @@ export default function FormNewHouse() {
                 className="input input-bordered w-full"
               /> */}
             </div>
-            </div>
-          </form>
-          
+            {/* </div> */}
             <button type="submit" className="btn btn-primary mt-6">
               Salvar
             </button>
+          </form>
         </div>
       </div>
     </div>

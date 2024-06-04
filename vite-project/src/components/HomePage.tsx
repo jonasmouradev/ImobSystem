@@ -64,7 +64,7 @@ export default function HomePage() {
             <button
               onClick={() => {
                 const modal = document.getElementById(
-                  "my_modal_3"
+                  "my_modal_2"
                 ) as HTMLDialogElement;
                 if (modal) {
                   modal.showModal();
@@ -87,19 +87,26 @@ export default function HomePage() {
                     d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
                   />
                 </svg>
-                <h1 className="mt-2 text-center">Criar Novo Contrato</h1>
-                <dialog id="my_modal_3" className="modal">
+                <dialog id="my_modal_2" className="modal">
                   <div className="w-full">
                     <p className="py-4">
                       <FormNewContract />
                     </p>
                   </div>
                 </dialog>
+                <h1 className="mt-2 text-center">Criar Novo Contrato</h1>
               </div>
             </button>
-                        {/* Nova Casa */}
-                        <button
-              onClick={() => navigate("/newHouse")}
+            {/* Nova Casa */}
+            <button
+              onClick={() => {
+                const modal = document.getElementById(
+                  "my_modal_1"
+                ) as HTMLDialogElement;
+                if (modal) {
+                  modal.showModal();
+                }
+              }}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">
@@ -118,9 +125,16 @@ export default function HomePage() {
                   />
                 </svg>
                 <h1 className="mt-2 text-center">Cadastrar Nova Casa</h1>
+                <dialog id="my_modal_1" className="modal">
+                  <div className="w-full">
+                    <p className="py-4">
+                      <FormNewHouse />
+                    </p>
+                  </div>
+                </dialog>
               </div>
             </button>
-                        {/* Novo Proprietário */}
+            {/* Novo Proprietário */}
             <button
               onClick={() => navigate("/newOwner")}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
@@ -143,7 +157,7 @@ export default function HomePage() {
                 <h1 className="mt-2 text-center">Cadastrar Novo Propietário</h1>
               </div>
             </button>
-                        {/* Novo Inquilino */}
+            {/* Novo Inquilino */}
             <button
               onClick={() => navigate("/newTenant")}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
@@ -212,7 +226,6 @@ export default function HomePage() {
                 <h1 className="mt-2 text-center">Contratos finalizados</h1>
               </div>
             </button>
-
           </div>
         </div>
       </div>
