@@ -125,7 +125,7 @@ export default function FormNewContract() {
 
   return (
     <div className="flex h-screen w-full justify-center items-center">
-      <div className="h-4/5 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
+      <div className="h-4/5 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg lg:h-min">
         <div className="h-full overflow-y-auto p-4">
           {/* <form onSubmit={handleAgreementSubmit}> */}
           <form method="dialog" className="modal-backdrop">
@@ -141,6 +141,7 @@ export default function FormNewContract() {
                   <span className="label-text">Dono da residência</span>
                 </label>
                 <input
+                  id="ownerName"
                   type="text"
                   placeholder="Nome"
                   name="OwnerName"
@@ -150,6 +151,7 @@ export default function FormNewContract() {
                   <span className="label-text">Inquilino</span>
                 </label>
                 <input
+                  id="tenantName"
                   type="text"
                   placeholder="Nome"
                   className="input input-bordered w-full"
@@ -159,6 +161,7 @@ export default function FormNewContract() {
                   <span className="label-text">Valor do Contrato</span>
                 </label>
                 <input
+                  id="agreementValue"
                   type="number"
                   placeholder="Valor"
                   className="input input-bordered w-full"
@@ -167,6 +170,7 @@ export default function FormNewContract() {
                   <span className="label-text">Número de Parcelas</span>
                 </label>
                 <input
+                  id="installment"
                   type="number"
                   placeholder="Parcelas"
                   className="input input-bordered w-full"
@@ -177,6 +181,7 @@ export default function FormNewContract() {
                   <span className="label-text">Início do Contrato</span>
                 </label>
                 <input
+                  id="initDate"
                   placeholder="initDate"
                   type="date"
                   className="input input-bordered w-full"
@@ -185,6 +190,7 @@ export default function FormNewContract() {
                   <span className="label-text">Término do Contrato</span>
                 </label>
                 <input
+                  id="endDate"
                   placeholder="endDate"
                   type="date"
                   className="input input-bordered w-full"

@@ -46,7 +46,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center custom-background">
+    <div className="md:h-screen flex items-center justify-center custom-background">
       <div className="image-background">
         <div className="Titulo m-10">
           ImobSystem
@@ -94,7 +94,7 @@ export default function HomePage() {
                     </p>
                   </div>
                 </dialog>
-                <h1 className="mt-2 text-center">Criar Novo Contrato</h1>
+                <h1 className="mt-2 text-center">Novo Contrato</h1>
               </div>
             </button>
             {/* Nova Casa */}
@@ -116,15 +116,16 @@ export default function HomePage() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-12 h-12"
+                  className="size-12"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
+                    d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                   />
                 </svg>
-                <h1 className="mt-2 text-center">Cadastrar Nova Casa</h1>
+
+                <h1 className="mt-2 text-center">Nova Casa</h1>
                 <dialog id="modal_house" className="modal">
                   <div className="w-full">
                     <p className="py-4">
@@ -153,14 +154,15 @@ export default function HomePage() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-12 h-12"
+                  className="size-12"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
                   />
                 </svg>
+
                 <h1 className="mt-2 text-center">Cadastrar Proprietário</h1>
                 <dialog id="modal_owner" className="modal">
                   <div className="w-full">
@@ -190,12 +192,12 @@ export default function HomePage() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-12 h-12"
+                  className="size-12"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
+                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
                   />
                 </svg>
                 <h1 className="mt-2 text-center">Cadastrar Inquilino</h1>
