@@ -8,10 +8,6 @@ export default function FormNewHouse() {
   const [house, setHouse] = useState<HouseType>();
   const [status, setStatus] = useState(false);
 
-  const handleStatus = () => {
-    status === true ? setStatus(false) : setStatus(true);
-  };
-
   const handleHouseSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -135,48 +131,51 @@ export default function FormNewHouse() {
               <button className="btn btn-sm btn-circle btn-ghost">✕</button>
             </div>
             {/* <div className="flex justify-between items-center mb-6"> */}
-            <div className="flex flex-col gap-4 mt-6">
-              <h2 className="text-xl font-semibold">Casa</h2>
-              <label className="label">
-                <span className="label-text">Endereço</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Endereço"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">Quartos</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Quartos"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">Tipo</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Tipo"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">CEP</span>
-              </label>
-              <input
-                type="text"
-                placeholder="CEP"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">User ID</span>
-              </label>
-              <input
-                type="number"
-                placeholder="User ID"
-                className="input input-bordered w-full"
-              />
+            <div className="grid grid-cols-2 gap-8">
+              <div className="flex flex-col gap-4">
+                <label className="label">
+                  <span className="label-text">Endereço</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Endereço"
+                  className="input input-bordered w-full"
+                />
+                <label className="label">
+                  <span className="label-text">Quartos</span>
+                </label>
+                <input
+                  type="number"
+                  placeholder="Quartos"
+                  className="input input-bordered w-full"
+                />
+                <label className="label">
+                  <span className="label-text">Tipo</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Tipo"
+                  className="input input-bordered w-full"
+                />
+              </div>
+              <div className="flex flex-col gap-4">
+                <label className="label">
+                  <span className="label-text">CEP</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="CEP"
+                  className="input input-bordered w-full"
+                />
+                <label className="label">
+                  <span className="label-text">User ID</span>
+                </label>
+                <input
+                  type="number"
+                  placeholder="User ID"
+                  className="input input-bordered w-full"
+                />
+              </div>
               {/* <h2 className="text-xl font-semibold">Utilizador</h2>
               <label className="label">
                 <span className="label-text">Nome</span>
@@ -211,10 +210,11 @@ export default function FormNewHouse() {
                 className="input input-bordered w-full"
               /> */}
             </div>
-            {/* </div> */}
-            <button type="submit" className="btn btn-primary mt-6">
-              Salvar
-            </button>
+            <div className="mt-10">
+              <button type="submit" className="btn btn-primary">
+                Salvar
+              </button>
+            </div>
           </form>
         </div>
       </div>

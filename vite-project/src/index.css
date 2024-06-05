@@ -278,7 +278,6 @@
   background-color: #3490dc;
 }
 
-
 /* CSS para a caixa de notificação */
 .notification-box {
   position: absolute;
@@ -308,4 +307,8 @@
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+input {
+  color: black;
 }

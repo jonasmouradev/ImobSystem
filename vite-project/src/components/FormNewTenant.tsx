@@ -8,10 +8,6 @@ export default function FormNewTenant() {
   const [house, setHouse] = useState<HouseType>();
   const [status, setStatus] = useState(false);
 
-  const handleStatus = () => {
-    status === true ? setStatus(false) : setStatus(true);
-  };
-
   const handleHouseSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -127,141 +123,64 @@ export default function FormNewTenant() {
     <div className="flex h-screen w-full justify-center items-center">
       <div className="h-2/3 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg">
         <div className="h-full overflow-y-auto p-4">
-          <form onSubmit={handleAgreementSubmit}>
+          <form method="dialog" className="modal-backdrop">
             <div className="flex justify-between items-center mb-6">
-              <h1 className="text-2xl font-bold">Cadastrar Novo Contrato</h1>
+              <h1 className="text-2xl text-black">Novo Inquilino</h1>
               <button className="btn btn-sm btn-circle btn-ghost">✕</button>
             </div>
+            {/* <div className="flex justify-between items-center mb-6"> */}
             <div className="grid grid-cols-2 gap-8">
               <div className="flex flex-col gap-4">
                 <label className="label">
-                  <span className="label-text">Dono da residência</span>
+                  <span className="label-text">Nome</span>
                 </label>
                 <input
-                  type="text"
-                  placeholder="Nome"
-                  name="OwnerName"
-                  className="input input-bordered w-full"
-                />
-                <label className="label">
-                  <span className="label-text">Inquilino</span>
-                </label>
-                <input
+                  id="name"
                   type="text"
                   placeholder="Nome"
                   className="input input-bordered w-full"
                 />
+
                 <label className="label">
-                  <span className="label-text">Descrição</span>
-                </label>
-                <textarea
-                  placeholder="Descrição"
-                  className="textarea textarea-bordered w-full"
-                  rows={4}
-                />
-                <label className="label">
-                  <span className="label-text">Valor do Contrato</span>
+                  <span className="label-text">Telefone</span>
                 </label>
                 <input
-                  type="number"
-                  placeholder="Valor"
+                  id="phone"
+                  type="phone"
+                  placeholder="Telefone"
                   className="input input-bordered w-full"
                 />
                 <label className="label">
-                  <span className="label-text">Número de Parcelas</span>
+                  <span className="label-text">CPF</span>
                 </label>
                 <input
-                  type="number"
-                  placeholder="Parcelas"
+                  id="cpf"
+                  type="text"
+                  placeholder="CPF"
                   className="input input-bordered w-full"
                 />
               </div>
               <div className="flex flex-col gap-4">
                 <label className="label">
-                  <span className="label-text">Estado</span>
+                  <span className="label-text">E-mail</span>
                 </label>
                 <input
-                  placeholder="status"
-                  type="checkbox"
-                  onClick={handleStatus}
-                  className="toggle toggle-primary"
+                  id="email"
+                  type="email"
+                  placeholder="E-mail"
+                  className="input input-bordered w-full"
                 />
+
                 <label className="label">
-                  <span className="label-text">Início do Contrato</span>
+                  <span className="label-text">Data de Nascimento</span>
                 </label>
                 <input
-                  placeholder="initDate"
+                  id="birth"
                   type="date"
+                  placeholder="Nascimento"
                   className="input input-bordered w-full"
                 />
-                <label className="label">
-                  <span className="label-text">Término do Contrato</span>
-                </label>
-                <input
-                  placeholder="endDate"
-                  type="date"
-                  className="input input-bordered w-full"
-                />
-                {/* <label className="label">
-                  <span className="label-text">Período do Acordo</span>
-                </label>
-                <input
-                  type="date"
-                  className="input input-bordered w-full"
-                />
-                <label className="label">
-                  <span className="label-text">Data Final do Acordo</span>
-                </label>
-                <input
-                  type="date"
-                  className="input input-bordered w-full"
-                /> */}
               </div>
-            </div>
-          </form>
-          <form onSubmit={handleHouseSubmit}>
-            <div className="flex flex-col gap-4 mt-6">
-              <h2 className="text-xl font-semibold">Casa</h2>
-              <label className="label">
-                <span className="label-text">Endereço</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Endereço"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">Quartos</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Quartos"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">Tipo</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Tipo"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">CEP</span>
-              </label>
-              <input
-                type="text"
-                placeholder="CEP"
-                className="input input-bordered w-full"
-              />
-              <label className="label">
-                <span className="label-text">User ID</span>
-              </label>
-              <input
-                type="number"
-                placeholder="User ID"
-                className="input input-bordered w-full"
-              />
               {/* <h2 className="text-xl font-semibold">Utilizador</h2>
               <label className="label">
                 <span className="label-text">Nome</span>
@@ -296,9 +215,11 @@ export default function FormNewTenant() {
                 className="input input-bordered w-full"
               /> */}
             </div>
-            <button type="submit" className="btn btn-primary mt-6">
-              Salvar
-            </button>
+            <div className="mt-10">
+              <button type="submit" className="btn btn-primary">
+                Salvar
+              </button>
+            </div>
           </form>
         </div>
       </div>

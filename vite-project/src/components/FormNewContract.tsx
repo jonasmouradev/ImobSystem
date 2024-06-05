@@ -154,14 +154,7 @@ export default function FormNewContract() {
                   placeholder="Nome"
                   className="input input-bordered w-full"
                 />
-                <label className="label">
-                  <span className="label-text">Descrição</span>
-                </label>
-                <textarea
-                  placeholder="Descrição"
-                  className="textarea textarea-bordered w-full"
-                  rows={4}
-                />
+
                 <label className="label">
                   <span className="label-text">Valor do Contrato</span>
                 </label>
@@ -181,15 +174,6 @@ export default function FormNewContract() {
               </div>
               <div className="flex flex-col gap-4">
                 <label className="label">
-                  <span className="label-text">Estado</span>
-                </label>
-                <input
-                  placeholder="status"
-                  type="checkbox"
-                  onClick={handleStatus}
-                  className="toggle toggle-primary"
-                />
-                <label className="label">
                   <span className="label-text">Início do Contrato</span>
                 </label>
                 <input
@@ -204,6 +188,14 @@ export default function FormNewContract() {
                   placeholder="endDate"
                   type="date"
                   className="input input-bordered w-full"
+                />
+                <label className="label">
+                  <span className="label-text">Descrição</span>
+                </label>
+                <textarea
+                  placeholder="Descrição"
+                  className="textarea textarea-bordered w-full"
+                  rows={4}
                 />
                 {/* <label className="label">
                   <span className="label-text">Período do Acordo</span>
@@ -221,9 +213,11 @@ export default function FormNewContract() {
                 /> */}
               </div>
             </div>
-            <button type="submit" className="btn btn-primary mt-6">
-              Salvar
-            </button>
+            <div className="mt-10">
+              <button type="submit" className="btn btn-primary">
+                Salvar
+              </button>
+            </div>
           </form>
         </div>
       </div>

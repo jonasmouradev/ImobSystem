@@ -91,6 +91,10 @@ export function createRoutes() {
       path: "/newOwner",
       element: <FormNewOwner />,
     },
+    {
+      path: "/newTenant",
+      element: <FormNewOwner />,
+    },
   ];
 
   return routes;

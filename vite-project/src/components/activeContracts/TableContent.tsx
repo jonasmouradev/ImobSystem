@@ -94,7 +94,6 @@ const ContractContent = () => {
   return (
     <div className="overflow-x-auto px-20">
       <div className="md:flex flex-row items-center py-10 2xl:py-0">
-        <h1 className="px-5 text-xl text-white">Products</h1>
         <label className="input input-bordered flex items-center gap-2 flex-auto max-w-80">
           <input
             type="text"

@@ -64,7 +64,7 @@ export default function HomePage() {
             <button
               onClick={() => {
                 const modal = document.getElementById(
-                  "my_modal_2"
+                  "modal_contract"
                 ) as HTMLDialogElement;
                 if (modal) {
                   modal.showModal();
@@ -87,7 +87,7 @@ export default function HomePage() {
                     d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
                   />
                 </svg>
-                <dialog id="my_modal_2" className="modal">
+                <dialog id="modal_contract" className="modal">
                   <div className="w-full">
                     <p className="py-4">
                       <FormNewContract />
@@ -101,7 +101,7 @@ export default function HomePage() {
             <button
               onClick={() => {
                 const modal = document.getElementById(
-                  "my_modal_1"
+                  "modal_house"
                 ) as HTMLDialogElement;
                 if (modal) {
                   modal.showModal();
@@ -125,7 +125,7 @@ export default function HomePage() {
                   />
                 </svg>
                 <h1 className="mt-2 text-center">Cadastrar Nova Casa</h1>
-                <dialog id="my_modal_1" className="modal">
+                <dialog id="modal_house" className="modal">
                   <div className="w-full">
                     <p className="py-4">
                       <FormNewHouse />
@@ -136,7 +136,14 @@ export default function HomePage() {
             </button>
             {/* Novo Proprietário */}
             <button
-              onClick={() => navigate("/newOwner")}
+              onClick={() => {
+                const modal = document.getElementById(
+                  "modal_owner"
+                ) as HTMLDialogElement;
+                if (modal) {
+                  modal.showModal();
+                }
+              }}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">
@@ -154,12 +161,26 @@ export default function HomePage() {
                     d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
                   />
                 </svg>
-                <h1 className="mt-2 text-center">Cadastrar Novo Propietário</h1>
+                <h1 className="mt-2 text-center">Cadastrar Proprietário</h1>
+                <dialog id="modal_owner" className="modal">
+                  <div className="w-full">
+                    <p className="py-4">
+                      <FormNewOwner />
+                    </p>
+                  </div>
+                </dialog>
               </div>
             </button>
             {/* Novo Inquilino */}
             <button
-              onClick={() => navigate("/newTenant")}
+              onClick={() => {
+                const modal = document.getElementById(
+                  "modal_tenant"
+                ) as HTMLDialogElement;
+                if (modal) {
+                  modal.showModal();
+                }
+              }}
               className="box w-48 h-48 flex items-center justify-center border rounded-lg"
             >
               <div className="flex flex-col items-center justify-center">
@@ -177,7 +198,14 @@ export default function HomePage() {
                     d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v-1.5A2.25 2.25 0 0 0 19.5 3h-15A2.25 2.25 0 0 0 2.25 5.25v1.5m0 0A2.25 2.25 0 0 1 4.5 3h15a2.25 2.25 0 0 1 2.25 2.25V6.75"
                   />
                 </svg>
-                <h1 className="mt-2 text-center">Cadastrar Novo Inquilino</h1>
+                <h1 className="mt-2 text-center">Cadastrar Inquilino</h1>
+                <dialog id="modal_tenant" className="modal">
+                  <div className="w-full">
+                    <p className="py-4">
+                      <FormNewTenant />
+                    </p>
+                  </div>
+                </dialog>
               </div>
             </button>
             {/* Abrir Contratos */}
