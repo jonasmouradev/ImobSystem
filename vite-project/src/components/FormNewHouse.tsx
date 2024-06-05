@@ -151,6 +151,8 @@ export default function FormNewHouse() {
                   placeholder="Quartos"
                   className="input input-bordered w-full"
                 />
+              </div>
+              <div className="flex flex-col gap-4">
                 <label className="label">
                   <span className="label-text">Tipo</span>
                 </label>
@@ -160,8 +162,6 @@ export default function FormNewHouse() {
                   placeholder="Tipo"
                   className="input input-bordered w-full"
                 />
-              </div>
-              <div className="flex flex-col gap-4">
                 <label className="label">
                   <span className="label-text">CEP</span>
                 </label>

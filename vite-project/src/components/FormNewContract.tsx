@@ -130,7 +130,7 @@ export default function FormNewContract() {
           <form
             method="dialog"
             className="modal-backdrop"
-            onSubmit={handleAgreementSubmit}
+            // onSubmit={handleAgreementSubmit}
           >
             <div className="flex justify-between items-center mb-6">
               <span className="label-text text-2xl font-bold">

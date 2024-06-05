@@ -74,28 +74,6 @@ export default function Login() {
                 <input type="submit" value="Entrar" />
               </div>
             </form>
-            <div className="register">
-              <button
-                title="Cadastrar"
-                onClick={() => {
-                  const modal = document.getElementById(
-                    'my_modal_3',
-                  ) as HTMLDialogElement;
-                  if (modal) {
-                    modal.showModal();
-                  }
-                }}
-              >
-                Cadastrar
-              </button>
-              <dialog id="my_modal_3" className="modal">
-                <div className="w-full">
-                  <div className="py-4">
-                    {/* <FormNewUser /> */}
-                  </div>
-                </div>
-              </dialog>
-            </div>
           </div>
 
           <div className="login-img">
