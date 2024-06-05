@@ -7,10 +7,9 @@ import { createHouse } from "../services/house/requests";
 export default function FormNewContract() {
   const [house, setHouse] = useState<HouseType>();
   const [status, setStatus] = useState(false);
-
-  const handleStatus = () => {
-    status === true ? setStatus(false) : setStatus(true);
-  };
+  const [initDate, setInitDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleHouseSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -56,7 +55,7 @@ export default function FormNewContract() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const ownerName = data.get("OwnerName") as string;
-    const tenatName = data.get("TenatName") as string;
+    const tenatName = data.get("TenantName") as string;
     const description = data.get("Description") as string;
     const agreementValue = data.get("AgreementValue") as string;
     const installment = data.get("Installment") as unknown as number;
@@ -128,7 +127,11 @@ export default function FormNewContract() {
       <div className="h-4/5 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg lg:h-min">
         <div className="h-full overflow-y-auto p-4">
           {/* <form onSubmit={handleAgreementSubmit}> */}
-          <form method="dialog" className="modal-backdrop">
+          <form
+            method="dialog"
+            className="modal-backdrop"
+            onSubmit={handleAgreementSubmit}
+          >
             <div className="flex justify-between items-center mb-6">
               <span className="label-text text-2xl font-bold">
                 Cadastrar Novo Contrato
@@ -141,7 +144,7 @@ export default function FormNewContract() {
                   <span className="label-text">Dono da residência</span>
                 </label>
                 <input
-                  id="ownerName"
+                  id="OwnerName"
                   type="text"
                   placeholder="Nome"
                   name="OwnerName"
@@ -151,7 +154,7 @@ export default function FormNewContract() {
                   <span className="label-text">Inquilino</span>
                 </label>
                 <input
-                  id="tenantName"
+                  id="TenantName"
                   type="text"
                   placeholder="Nome"
                   className="input input-bordered w-full"
@@ -161,7 +164,7 @@ export default function FormNewContract() {
                   <span className="label-text">Valor do Contrato</span>
                 </label>
                 <input
-                  id="agreementValue"
+                  id="AgreementValue"
                   type="number"
                   placeholder="Valor"
                   className="input input-bordered w-full"
@@ -170,7 +173,7 @@ export default function FormNewContract() {
                   <span className="label-text">Número de Parcelas</span>
                 </label>
                 <input
-                  id="installment"
+                  id="Installment"
                   type="number"
                   placeholder="Parcelas"
                   className="input input-bordered w-full"
@@ -181,8 +184,8 @@ export default function FormNewContract() {
                   <span className="label-text">Início do Contrato</span>
                 </label>
                 <input
-                  id="initDate"
-                  placeholder="initDate"
+                  id="InitDate"
+                  placeholder="Início"
                   type="date"
                   className="input input-bordered w-full"
                 />
@@ -190,8 +193,8 @@ export default function FormNewContract() {
                   <span className="label-text">Término do Contrato</span>
                 </label>
                 <input
-                  id="endDate"
-                  placeholder="endDate"
+                  id="FinalDate"
+                  placeholder="Término"
                   type="date"
                   className="input input-bordered w-full"
                 />
@@ -199,8 +202,9 @@ export default function FormNewContract() {
                   <span className="label-text">Descrição</span>
                 </label>
                 <textarea
+                  id="Description"
                   placeholder="Descrição"
-                  className="textarea textarea-bordered w-full"
+                  className="textarea textarea-bordered w-full text-black"
                   rows={4}
                 />
                 {/* <label className="label">
@@ -220,7 +224,11 @@ export default function FormNewContract() {
               </div>
             </div>
             <div className="mt-10">
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                // onClick={handleAgreementRegister}
+              >
                 Salvar
               </button>
             </div>
