@@ -124,7 +124,7 @@ export default function FormNewContract() {
 
   return (
     <div className="flex h-screen w-full justify-center items-center">
-      <div className="h-4/5 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg lg:h-min">
+      <div className="h-4/5 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg 2xl:h-min">
         <div className="h-full overflow-y-auto p-4">
           {/* <form onSubmit={handleAgreementSubmit}> */}
           <form

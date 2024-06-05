@@ -121,7 +121,7 @@ export default function FormNewOwner() {
 
   return (
     <div className="flex h-screen w-full justify-center items-center">
-      <div className="h-4/5 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg lg:h-min">
+      <div className="h-4/5 w-1/2 max-w-4xl p-10 bg-white rounded-xl shadow-lg 2xl:h-min w-full">
         <div className="h-full overflow-y-auto p-4">
           <form method="dialog" className="modal-backdrop">
             <div className="flex justify-between items-center mb-6">
