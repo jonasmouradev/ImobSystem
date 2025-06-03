@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FormNewUser from '../../components/FromNewUser';
+import { useUsersStore } from '@/store/users';
 
-export const Login = () => {
+export default function Login() {
   const navigate = useNavigate();
+  const findUserByCredentials = useUsersStore(
+    (state) => state.findUserByCredentials,
+  );
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('Preencha todos os campos');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleLogin = (event) => {
+  const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
 
     if (email.trim() === '' || password.trim() === '') {
@@ -17,6 +20,13 @@ export const Login = () => {
       return;
     }
 
+    const user = findUserByCredentials(email);
+    if (!user || user.password !== password) {
+      setErrorMessage('Email ou senha inválidos.');
+      return;
+    }
+
+    setErrorMessage('');
     navigate('/home');
   };
 
@@ -91,4 +101,4 @@ export const Login = () => {
       </div>
     </div>
   );
-};
+}

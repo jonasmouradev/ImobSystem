@@ -1,186 +1,169 @@
-import { createAgreement } from '@/services/agreement/requests';
 import React, { useState } from 'react';
 import { addToast } from '@/components/Toast/toast';
-import { HouseType } from '@/services/house/types';
-import { createHouse } from '@/services/house/requests';
 import { Label } from '@/components/Label';
 import { Input } from '@/components/Input';
+import { useFormsStore } from '@/store/forms';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function FormNewContract() {
-  const [house, setHouse] = useState<HouseType>();
-  const [status, setStatus] = useState(false);
-  const [initDate, setInitDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [description, setDescription] = useState('');
+  const addNewContract = useFormsStore((state) => state.addNewContract);
 
-  const handleHouseSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const address = data.get('Address') as string;
-    const roomsNumber = data.get('RoomsNumber') as unknown as number;
-    const type = data.get('Type') as string;
-    const CEP = data.get('CEP') as string;
-    if (address !== '' && roomsNumber !== 0 && type !== '' && CEP !== '') {
-      handleHouseRegister(address, roomsNumber, type, CEP);
-    } else {
-      addToast('Preencha todos os campos', { appearance: 'error' });
-    }
-  };
+  const [form, setForm] = useState({
+    ownerName: '',
+    tenantName: '',
+    house: '',
+    agreementValue: '',
+    installment: '',
+    initDate: '',
+    finalDate: '',
+    description: '',
+  });
 
-  const handleHouseRegister = async (
-    address: string,
-    rooms: number,
-    type: string,
-    zipCode: string,
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    try {
-      const data = await createHouse({
-        address,
-        rooms,
-        type,
-        zipCode,
-      });
-
-      if (data.success) {
-        addToast('Cadastro realizado com sucesso', { appearance: 'success' });
-        setHouse({ address, rooms, type, zipCode });
-      } else {
-        addToast('Email ou senha incorretos', { appearance: 'error' });
-      }
-    } catch (error) {
-      console.error('Register failed:', error);
-      addToast('O cadastro falhou', { appearance: 'error' });
-    }
+    setForm({ ...form, [e.target.id]: e.target.value });
   };
 
   const handleAgreementSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const ownerName = data.get('OwnerName') as string;
-    const tenatName = data.get('TenantName') as string;
-    const description = data.get('Description') as string;
-    const agreementValue = data.get('AgreementValue') as string;
-    const installment = data.get('Installment') as unknown as number;
-    const initDate = data.get('InitDate') as unknown as Date;
-    const finalDate = data.get('FinalDate') as unknown as Date;
+
+    const {
+      ownerName,
+      tenantName,
+      house,
+      agreementValue,
+      installment,
+      initDate,
+      finalDate,
+      description,
+    } = form;
 
     if (
-      ownerName !== '' &&
-      tenatName !== '' &&
-      description !== '' &&
-      agreementValue !== '' &&
-      installment !== null &&
-      initDate !== null &&
-      finalDate !== null
+      !ownerName ||
+      !tenantName ||
+      !house ||
+      !agreementValue ||
+      !installment ||
+      !initDate ||
+      !finalDate ||
+      !description
     ) {
-      handleAgreementRegister(
-        ownerName,
-        tenatName,
-        description,
-        agreementValue,
-        installment,
-        status,
-        initDate,
-        finalDate,
-        house,
-      );
-    } else {
       addToast('Preencha todos os campos', { appearance: 'error' });
+      return;
     }
-  };
 
-  const handleAgreementRegister = async (
-    owner: string,
-    tenant: string,
-    description: string,
-    valueAgreement: string,
-    numInstallments: number,
-    status: boolean,
-    initDateAgreement: Date,
-    finalDateAgreement: Date,
-    house: HouseType | undefined,
-  ) => {
-    try {
-      const data = await createAgreement({
-        owner,
-        tenant,
-        description,
-        valueAgreement,
-        numInstallments,
-        status,
-        initDateAgreement,
-        finalDateAgreement,
-        house,
-      });
+    addNewContract({
+      id: uuidv4(),
+      propertyId: house,
+      tenantId: tenantName,
+      startDate: initDate,
+      endDate: finalDate,
+      value: Number(agreementValue),
+      // You can add more fields as needed
+    });
 
-      if (data.success) {
-        addToast('Cadastro realizado com sucesso', { appearance: 'success' });
-      } else {
-        addToast('Email ou senha incorretos', { appearance: 'error' });
-      }
-    } catch (error) {
-      console.error('Register failed:', error);
-      addToast('O cadastro falhou', { appearance: 'error' });
-    }
+    addToast('Contrato cadastrado com sucesso', { appearance: 'success' });
+
+    setForm({
+      ownerName: '',
+      tenantName: '',
+      house: '',
+      agreementValue: '',
+      installment: '',
+      initDate: '',
+      finalDate: '',
+      description: '',
+    });
   };
 
   return (
     <div className="flex h-screen w-full justify-center items-center">
       <div className="h-4/5 w-full max-w-4xl p-10 bg-white rounded-xl shadow-lg 2xl:h-min">
         <div className="h-full overflow-y-auto p-4">
-          {/* <form onSubmit={handleAgreementSubmit}> */}
           <form
+            onSubmit={handleAgreementSubmit}
             method="dialog"
             className="modal-backdrop"
-            // onSubmit={handleAgreementSubmit}
           >
             <div className="flex justify-between items-center mb-6">
               <span className="label-text text-2xl font-bold">
                 Cadastrar Novo Contrato
               </span>
-              <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+              <button className="btn btn-sm btn-circle btn-ghost" type="button">
+                ✕
+              </button>
             </div>
             <div className="grid grid-cols-2 gap-8">
               <div className="flex flex-col gap-4">
                 <Label>Proprietário</Label>
-                <Input id="OwnerName" placeholder="Nome" name="OwnerName" />
+                <Input
+                  id="ownerName"
+                  placeholder="Nome"
+                  value={form.ownerName}
+                  onChange={handleChange}
+                />
                 <Label>Inquilino</Label>
-                <Input id="TenantName" placeholder="Nome" />
+                <Input
+                  id="tenantName"
+                  placeholder="Nome"
+                  value={form.tenantName}
+                  onChange={handleChange}
+                />
                 <Label>Casa</Label>
-                <Input id="Installment" placeholder="Casa" />
+                <Input
+                  id="house"
+                  placeholder="Casa"
+                  value={form.house}
+                  onChange={handleChange}
+                />
                 <Label>Valor do Contrato</Label>
-                <Input id="AgreementValue" type="number" placeholder="Valor" />
+                <Input
+                  id="agreementValue"
+                  type="number"
+                  placeholder="Valor"
+                  value={form.agreementValue}
+                  onChange={handleChange}
+                />
                 <Label>Número de Parcelas</Label>
-                <Input id="Installment" type="number" placeholder="Parcelas" />
+                <Input
+                  id="installment"
+                  type="number"
+                  placeholder="Parcelas"
+                  value={form.installment}
+                  onChange={handleChange}
+                />
               </div>
               <div className="flex flex-col gap-4">
                 <Label>Início do Contrato</Label>
-                <Input id="InitDate" placeholder="Início" type="date" />
+                <Input
+                  id="initDate"
+                  placeholder="Início"
+                  type="date"
+                  value={form.initDate}
+                  onChange={handleChange}
+                />
                 <Label>Término do Contrato</Label>
-                <Input id="FinalDate" placeholder="Término" type="date" />
+                <Input
+                  id="finalDate"
+                  placeholder="Término"
+                  type="date"
+                  value={form.finalDate}
+                  onChange={handleChange}
+                />
                 <Label>Descrição</Label>
                 <textarea
-                  id="Description"
+                  id="description"
                   placeholder="Descrição"
                   className="textarea textarea-bordered w-full text-black"
                   rows={4}
+                  value={form.description}
+                  onChange={handleChange}
                 />
-                {/*<Label>Período do Acordo</Label>
-                <Input
-                  type="date"
-                />
-               <Label>Data Final do Acordo</Label>
-                <Input
-                  type="date"
-                /> */}
               </div>
             </div>
             <div className="mt-10">
-              <button
-                type="submit"
-                className="btn btn-primary"
-                // onClick={handleAgreementRegister}
-              >
+              <button type="submit" className="btn btn-primary">
                 Salvar
               </button>
             </div>
