@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import FormNewUser from './FormNewUser';
+import FormNewUser from '../../components/FromNewUser';
 
 export const Login = () => {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('Preencha todos os campos');
@@ -62,13 +63,15 @@ export const Login = () => {
                 />
               </div>
 
-              {/* Exibir mensagem de erro, se houver */}
               {errorMessage && (
                 <div className="error-message">{errorMessage}</div>
               )}
 
               <div className="forgot">
-                <a href="#">Esqueceu a senha?</a>
+                <a href="/forgot-password">Esqueceu a senha?</a>
+              </div>
+              <div className="forgot">
+                <a href="/registration">Não possui login? Cadastre-se aqui</a>
               </div>
               <div className="input-box">
                 <input type="submit" value="Entrar" />

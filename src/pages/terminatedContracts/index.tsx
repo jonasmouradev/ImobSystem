@@ -1,5 +1,98 @@
 import TableHeader from '../contractTable/components/TableHeader';
 
+const terminatedContracts = [
+  {
+    id: 1,
+    name: 'Cy Ganderton',
+    job: 'Quality Control Specialist',
+    company: 'Littel, Schaden and Vandervort',
+    location: 'Canada',
+    lastLogin: '12/16/2020',
+    favoriteColor: 'Blue',
+  },
+  {
+    id: 2,
+    name: 'Hart Hagerty',
+    job: 'Desktop Support Technician',
+    company: 'Zemlak, Daniel and Leannon',
+    location: 'United States',
+    lastLogin: '12/5/2020',
+    favoriteColor: 'Purple',
+  },
+  {
+    id: 3,
+    name: 'Brice Swyre',
+    job: 'Tax Accountant',
+    company: 'Carroll Group',
+    location: 'China',
+    lastLogin: '8/15/2020',
+    favoriteColor: 'Red',
+  },
+  {
+    id: 4,
+    name: 'Marjy Ferencz',
+    job: 'Office Assistant I',
+    company: 'Rowe-Schoen',
+    location: 'Russia',
+    lastLogin: '3/25/2021',
+    favoriteColor: 'Crimson',
+  },
+  {
+    id: 5,
+    name: 'Yancy Tear',
+    job: 'Community Outreach Specialist',
+    company: 'Wyman-Ledner',
+    location: 'Brazil',
+    lastLogin: '5/22/2020',
+    favoriteColor: 'Indigo',
+  },
+  {
+    id: 6,
+    name: 'Irma Vasilik',
+    job: 'Editor',
+    company: 'Wiza, Bins and Emard',
+    location: 'Venezuela',
+    lastLogin: '12/8/2020',
+    favoriteColor: 'Purple',
+  },
+  {
+    id: 7,
+    name: 'Meghann Durtnal',
+    job: 'Staff Accountant IV',
+    company: 'Schuster-Schimmel',
+    location: 'Philippines',
+    lastLogin: '2/17/2021',
+    favoriteColor: 'Yellow',
+  },
+  {
+    id: 8,
+    name: 'Sammy Seston',
+    job: 'Accountant I',
+    company: "O'Hara, Welch and Keebler",
+    location: 'Indonesia',
+    lastLogin: '5/23/2020',
+    favoriteColor: 'Crimson',
+  },
+  {
+    id: 9,
+    name: 'Lesya Tinham',
+    job: 'Safety Technician IV',
+    company: 'Turner-Kuhlman',
+    location: 'Philippines',
+    lastLogin: '2/21/2021',
+    favoriteColor: 'Maroon',
+  },
+  {
+    id: 10,
+    name: 'Zaneta Tewkesbury',
+    job: 'VP Marketing',
+    company: 'Sauer LLC',
+    location: 'Chad',
+    lastLogin: '6/23/2020',
+    favoriteColor: 'Green',
+  },
+];
+
 export default function TerminatedContracts() {
   return (
     <div className="w-full h-screen p-10">
@@ -11,111 +104,32 @@ export default function TerminatedContracts() {
               <th></th>
               <th>Name</th>
               <th>Job</th>
-              <th>company</th>
-              <th>location</th>
+              <th>Company</th>
+              <th>Location</th>
               <th>Last Login</th>
               <th>Favorite Color</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Littel, Schaden and Vandervort</td>
-              <td>Canada</td>
-              <td>12/16/2020</td>
-              <td>Blue</td>
-            </tr>
-            <tr>
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Zemlak, Daniel and Leannon</td>
-              <td>United States</td>
-              <td>12/5/2020</td>
-              <td>Purple</td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Carroll Group</td>
-              <td>China</td>
-              <td>8/15/2020</td>
-              <td>Red</td>
-            </tr>
-            <tr>
-              <th>4</th>
-              <td>Marjy Ferencz</td>
-              <td>Office Assistant I</td>
-              <td>Rowe-Schoen</td>
-              <td>Russia</td>
-              <td>3/25/2021</td>
-              <td>Crimson</td>
-            </tr>
-            <tr>
-              <th>5</th>
-              <td>Yancy Tear</td>
-              <td>Community Outreach Specialist</td>
-              <td>Wyman-Ledner</td>
-              <td>Brazil</td>
-              <td>5/22/2020</td>
-              <td>Indigo</td>
-            </tr>
-            <tr>
-              <th>6</th>
-              <td>Irma Vasilik</td>
-              <td>Editor</td>
-              <td>Wiza, Bins and Emard</td>
-              <td>Venezuela</td>
-              <td>12/8/2020</td>
-              <td>Purple</td>
-            </tr>
-            <tr>
-              <th>7</th>
-              <td>Meghann Durtnal</td>
-              <td>Staff Accountant IV</td>
-              <td>Schuster-Schimmel</td>
-              <td>Philippines</td>
-              <td>2/17/2021</td>
-              <td>Yellow</td>
-            </tr>
-            <tr>
-              <th>8</th>
-              <td>Sammy Seston</td>
-              <td>Accountant I</td>
-              <td>O'Hara, Welch and Keebler</td>
-              <td>Indonesia</td>
-              <td>5/23/2020</td>
-              <td>Crimson</td>
-            </tr>
-            <tr>
-              <th>9</th>
-              <td>Lesya Tinham</td>
-              <td>Safety Technician IV</td>
-              <td>Turner-Kuhlman</td>
-              <td>Philippines</td>
-              <td>2/21/2021</td>
-              <td>Maroon</td>
-            </tr>
-            <tr>
-              <th>10</th>
-              <td>Zaneta Tewkesbury</td>
-              <td>VP Marketing</td>
-              <td>Sauer LLC</td>
-              <td>Chad</td>
-              <td>6/23/2020</td>
-              <td>Green</td>
-            </tr>
+            {terminatedContracts.map((contract) => (
+              <tr key={contract.id}>
+                <th>{contract.id}</th>
+                <td>{contract.name}</td>
+                <td>{contract.job}</td>
+                <td>{contract.company}</td>
+                <td>{contract.location}</td>
+                <td>{contract.lastLogin}</td>
+                <td>{contract.favoriteColor}</td>
+              </tr>
+            ))}
           </tbody>
           <tfoot>
             <tr>
               <th></th>
               <th>Name</th>
               <th>Job</th>
-              <th>company</th>
-              <th>location</th>
+              <th>Company</th>
+              <th>Location</th>
               <th>Last Login</th>
               <th>Favorite Color</th>
             </tr>
