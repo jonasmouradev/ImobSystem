@@ -1,0 +1,50 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "lint": "eslint .",
+    "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "preview": "vite preview",
+    "json": "json-server --watch dadosJson/db.json --port 3001"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "axios": "^1.9.0",
+    "json-server": "^1.0.0-beta.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.23.1",
+    "react-toastify": "^11.0.5",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.x",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.x",
+    "@testing-library/react": "^16.3.x",
+    "@testing-library/user-event": "^14.6.x",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react-swc": "^3.10.0",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.11.1",
+    "eslint": "^9.28.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.4.38",
+    "tailwind": "^4.0.0",
+    "typescript-eslint": "^8.26.x",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.0"
+  }
+}
